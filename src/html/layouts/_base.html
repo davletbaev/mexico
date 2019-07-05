@@ -16,15 +16,13 @@
 <body>
   {# {% include "components/_header.html" %} #}
   
-  <main class="main">
+  <main class="main" id="app">
     {% block content %}{% endblock %}
   </main>
 
   {# {% include "components/_footer.html" %} #}
 
-  <script src="/js/vendor/jquery-3.4.1.min.js"></script>
-  <script src="/js/vendor/ofi.min.js"></script>
-  <script src="/js/vendor/slick.min.js"></script>
-  <script src="/js/scripts.js"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 </html>

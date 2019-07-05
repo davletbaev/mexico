@@ -1,8 +1,9 @@
 const gulp        = require('gulp')
 const browserSync = require('browser-sync')
 
-const paths = require('./tools/paths')
-const tasks = require('./tools/tasks')
+const paths  = require('./tools/paths')
+const tasks  = require('./tools/tasks')
+const deploy = require('./tools/deploy')
 
 /**
 * Generic Task for all Main Gulp Build/Export Tasks
@@ -40,7 +41,6 @@ const genericTask = (mode = 'development') => {
     // Watch - Images
     gulp.watch(paths.watch.images)
     .on('all', gulp.series(
-      Object.assign(tasks.clean([`${paths.dist.images}/*`, `!${paths.dist.images}/icons.svg`]), { displayName: 'Clean Images' }),
       Object.assign(tasks.images(mode), { displayName: `Watching Images` }),
       Object.assign(bs.reload, { displayName: `Reloading browser` })
     ))
@@ -56,8 +56,16 @@ const genericTask = (mode = 'development') => {
     // Watch - Fonts
     gulp.watch(paths.watch.fonts)
     .on('all', gulp.series(
-      Object.assign(tasks.clean(paths.dist.fonts), { displayName: 'Clean Images' }),
+      Object.assign(tasks.clean(paths.dist.fonts), { displayName: 'Clean Fonts' }),
       Object.assign(tasks.fonts(mode), { displayName: `Watching Fonts` }),
+      Object.assign(bs.reload, { displayName: `Reloading browser` })
+    ))
+
+    // Watch - Favicon
+    gulp.watch(paths.watch.favicon)
+    .on('all', gulp.series(
+      Object.assign(tasks.clean(paths.dist.favicon), { displayName: 'Clean Favicons' }),
+      Object.assign(tasks.favicon(mode), { displayName: `Watching Favicon` }),
       Object.assign(bs.reload, { displayName: `Reloading browser` })
     ))
 
@@ -71,7 +79,6 @@ const genericTask = (mode = 'development') => {
     // Watch - Scripts
     gulp.watch(paths.watch.js)
     .on('all', gulp.series(
-      Object.assign(tasks.clean(paths.dist.js), { displayName: 'Clean Scripts' }),
       Object.assign(tasks.scripts(mode), { displayName: `Watching Scripts` }),
       Object.assign(bs.reload, { displayName: `Reloading browser` })
     ))
@@ -103,3 +110,6 @@ gulp.task('dev', gulp.series(...genericTask('development')))
 
 // Build (`npm run build` or `yarn build`) => Production
 gulp.task('build', gulp.series(...genericTask('production')))
+
+// Deploy to GitHub Pages
+gulp.task('deploy', gulp.series('build', Object.assign(deploy, { displayName: `Deploying to GitHub Pages` })))

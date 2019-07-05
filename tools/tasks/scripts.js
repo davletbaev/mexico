@@ -1,20 +1,16 @@
-const gulp         = require('gulp')
-const pump         = require('pump')
-const babel        = require('gulp-babel')
-const uglify       = require('gulp-uglify')
-const sourcemaps   = require('gulp-sourcemaps')
+const gulp          = require('gulp')
+const pump          = require('pump')
+const webpack       = require('webpack')
+const webpackStream = require('webpack-stream')
 
 const paths = require('../paths')
 
 const buildScripts = (mode) => (done) => {
+  const webpackConfig = require('../webpack')(mode)
+
   pump([
       gulp.src(paths.src.js),
-      ...((mode === 'development') ? [ sourcemaps.init({ loadMaps: true }) ] : []),
-      babel({
-        presets: ['@babel/env']
-      }),
-      ...((mode === 'production') ? [ uglify() ] : []),
-      ...((mode === 'development') ? [ sourcemaps.write('./') ] : []),
+      webpackStream(webpackConfig, webpack),
       gulp.dest(paths.dist.js)
   ], done)
 }
