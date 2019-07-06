@@ -2,7 +2,7 @@ const entry = require('../entry')
 
 module.exports = {
     mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-source-map',
     entry: entry,
     output: {
         filename: '[name].js'
@@ -21,8 +21,7 @@ module.exports = {
         ]
     },
     externals: {
-      jquery: 'jQuery',
-      // vue: 'vue'
+      jquery: 'jQuery'
     },
     resolve: {
       alias: {

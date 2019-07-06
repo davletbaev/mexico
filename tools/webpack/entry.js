@@ -1,3 +1,3 @@
 module.exports = {
-	bundle: ['core-js/shim', 'regenerator-runtime/runtime', './src/js/main.js'],
+	bundle: ['./src/js/main.js'],
 }

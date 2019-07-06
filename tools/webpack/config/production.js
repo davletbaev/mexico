@@ -23,8 +23,12 @@ module.exports = {
         ]
     },
     externals: {
-      jquery: 'jQuery',
-      vue: 'Vue'
+      jquery: 'jQuery'
+    },
+    resolve: {
+      alias: {
+        vue: 'vue/dist/vue.min.js'
+      }
     },
     optimization: {
 		namedModules: true,

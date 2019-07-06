@@ -1,9 +1,8 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 const vm = new Vue({
   el: '#app',
   data: {
-    message: 'Hello world!',
-    showModal: false
+    message: 'Hello world!'
   }
 })
