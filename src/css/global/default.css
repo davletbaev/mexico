@@ -11,16 +11,9 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
-  font-family: $ff-default;
+  font-family: 'Arial', sans-serif;
   font-display: fallback;
   outline: none;
-}
-
-body {
-  font-size: $fs-default;
-  line-height: $lh-default;
-  color: $primary;
-  background-color: $bg-light;
 }
 
 a {
@@ -30,14 +23,6 @@ a {
 
 button {
   color: inherit;
-}
-
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  box-shadow: 0 0 0 2px $focus;
 }
 
 svg {

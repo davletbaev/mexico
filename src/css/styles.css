@@ -1,0 +1,8 @@
+@import "normalize.css";
+
+@import 'global/variables';
+@import 'global/typography';
+@import 'global/default';
+@import 'global/fonts';
+@import 'global/utils';
+@import 'global/layout';
