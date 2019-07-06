@@ -29,6 +29,7 @@ afterAll(() => {
 describe('Home', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:5000/', {waitUntil: 'domcontentloaded'})
+    await page.waitFor(2000)
     await page.screenshot({
       path: 'tests/screenshots/home.png',
       fullPage: true

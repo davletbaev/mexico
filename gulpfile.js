@@ -115,4 +115,4 @@ gulp.task('dev', gulp.series(...genericTask('development')))
 gulp.task('build', gulp.series(...genericTask('production')))
 
 // Deploy to GitHub Pages
-gulp.task('deploy', gulp.series('build', Object.assign(deploy, { displayName: `Deploying to GitHub Pages` })))
+gulp.task('deploy', Object.assign(deploy, { displayName: `Deploying to GitHub Pages` }))
