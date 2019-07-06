@@ -2,3 +2,5 @@ node_modules
 dist
 .publish
 .DS_Store
+.vscode
+*.log
