@@ -11,4 +11,4 @@ cd "${0%/*}/.."
 # let's fake failing test for now 
 echo "Running tests..."
 yarn test         # JS unit tests
-echo "Tests Passed. Pushing to remote repo..."
+echo "Tests Passed."
