@@ -40,7 +40,9 @@ const buildStyles = (mode, bs) => (done) => {
     easings({
       easings: { easeJump: 'cubic-bezier(.86,0,.69,1.57)' }
     }),
-    autoprefixer,
+    autoprefixer({
+      grid: 'autoplace'
+    }),
     flexbugs,
     ...((mode === 'production') ? [
       uncss({
