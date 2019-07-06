@@ -9,12 +9,6 @@ set -e
 cd "${0%/*}/.."
 
 # let's fake failing test for now 
-echo "Running tests"
-echo "............................" 
+echo "Running tests..."
 yarn test         # JS unit tests
-
-# example of commands for different languages
-# eslint .         # JS code quality check
-# flake8 .         # python code quality check
-# nosetests        # python nose 
-# just put your usual test command here 
+echo "Tests Passed. Pushing to remote repo..."
