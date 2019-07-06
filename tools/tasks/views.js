@@ -13,6 +13,7 @@ const buildHtml = (mode) => (done) => {
       nunjucks.compile(),
       beautify({
         indentSize: 2,
+        indent_with_tabs: false,
         preserve_newlines: false,
       }),
       gulp.dest(paths.dist.html)

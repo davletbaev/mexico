@@ -72,7 +72,7 @@ const genericTask = (mode = 'development') => {
     // Watch - Styles
     gulp.watch(paths.watch.css)
     .on('all', gulp.series(
-      Object.assign(tasks.clean(paths.dist.css), { displayName: 'Clean Styles' }),
+      Object.assign(tasks.clean([paths.dist.css, 'src/css/css-modules.json']), { displayName: 'Clean Styles' }),
       Object.assign(tasks.styles(mode, bs), { displayName: `Watching Styles` }),
     ))
 
@@ -90,12 +90,15 @@ const genericTask = (mode = 'development') => {
   return [
     Object.assign(tasks.clean('dist'), { displayName: `Clean bulding folder - ${ modeType }` }),
     Object.assign(tasks.views(mode), { displayName: `Build HTML - ${ modeType }` }),
-    Object.assign(tasks.fonts(mode), { displayName: `Build Fonts - ${ modeType }` }),
-    Object.assign(tasks.styles(mode), { displayName: `Build Styles - ${ modeType }` }),
     Object.assign(tasks.scripts(mode), { displayName: `Build Scripts - ${ modeType }` }),
+    Object.assign(tasks.styles(mode), { displayName: `Build Styles - ${ modeType }` }),
     Object.assign(tasks.images(mode), { displayName: `Build Images - ${ modeType }` }),
-    Object.assign(tasks.sprite(mode), { displayName: `Build SVG Sprite- ${ modeType }` }),
+    Object.assign(tasks.sprite(mode), { displayName: `Build PNG Sprite- ${ modeType }` }),
+    Object.assign(tasks.svg(mode), { displayName: `Build SVG Sprite- ${ modeType }` }),
+    Object.assign(tasks.fonts(mode), { displayName: `Build Fonts - ${ modeType }` }),
     isDev && Object.assign(startBrowserSync, { displayName: `Browser Loading & Watching Task` }),
+    !isDev && Object.assign(tasks.noindex, { displayName: `Added Robots.txt to prevent indexing` }),
+    !isDev && Object.assign(tasks.revision, { displayName: `Creating New Revision` })
   ].filter(Boolean)
 }
 
