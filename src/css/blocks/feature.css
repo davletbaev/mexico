@@ -1,0 +1,52 @@
+.feature {
+  text-align: center;
+  padding: 1rem 0;
+
+  & + .feature {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      height: 1px;
+      width: 5.25rem;
+      background-color: var(--bg-gray);
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.75rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-image: url('../img/illustrations/illustration5@1x.png')
+  }
+
+  &__icon {
+    font-size: 2rem;
+    color: var(--white);
+  }
+
+  &__text {
+    font-family: var(--ff-alt);
+    font-size: var(--fs-sm);
+    font-weigth: 700;
+    line-height: 3.5;
+    text-transform: uppercase;
+  }
+}
+
+.has-webp {
+  .feature__img {
+    background-image: url('../img/illustrations/illustration5@1x.webp')
+  }
+}

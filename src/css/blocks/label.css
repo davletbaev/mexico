@@ -1,0 +1,9 @@
+.label {
+  display: inline-block;
+  height: 1.75rem;
+  padding: 0.45rem 0.5rem 0;
+  line-height: 1;
+  color: var(--white);
+  background-color: var(--bg-accent);
+  border-radius: var(--br-default);
+}

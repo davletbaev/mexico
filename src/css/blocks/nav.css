@@ -1,0 +1,40 @@
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__mobile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: calc(100vh - 5rem);
+    padding: 1.25rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: white;
+    z-index: 1000;
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: -275px;
+      bottom: 50px;
+      width: 548px;
+      height: 404px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url('../img/illustrations/illustration5@1x.png');
+      z-index: -1;
+    }
+  }
+}
+
+.has-webp {
+  .nav__mobile:after {
+    background-image: url('../img/illustrations/illustration5@1x.webp')
+  }
+}

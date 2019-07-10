@@ -1,0 +1,59 @@
+.accordion {
+  overflow: hidden;
+  border-radius: 0.3rem;
+  border: 1px solid var(--bc-default);
+  box-shadow: 0;
+  transition: border-color ease-out-quint 0.3s, box-shadow ease-out-quint 0.3s;
+
+  &.js-active {
+    border-color: transparent;
+    box-shadow: var(--bs-default);
+  }
+  
+  &__heading {
+    position: relative;
+    padding: 0 1.25rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    cursor: pointer;
+    font-family: var(--ff-secondary);
+    font-weight: normal;
+    background-color: var(--bg-white);
+    transition: background-color ease-out-quint 0.3s;
+
+    &:after {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      top: 50%;
+      right: 1.2rem;
+      transform: translateY(-50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 0.5rem;
+      background-image: svg-load('../../img/svg/arrow-bottom.svg', fill=none, stroke=#101546);
+      transition: transform ease-out-quint 0.5s;
+    }
+
+    &.js-active {
+      color: var(--white);
+      background-color: var(--bg-accent);
+
+      &:after {
+        transform: translateY(-50%) rotate(180deg);
+        transform-origin: center;
+        background-image: svg-load('../../img/svg/arrow-bottom.svg', fill=none, stroke=#fff)
+      }
+    }
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+
+    &-inner {
+      padding: 0 1.25rem 1.25rem;
+    }
+  }
+}

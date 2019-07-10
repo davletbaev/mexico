@@ -1,0 +1,124 @@
+.control {
+  display: block;
+  
+  &__label {
+    color: var(--text-secondary);
+    font-size: var(--fs-default);
+
+    &--bold {
+      font-family: var(--ff-alt);
+    }
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__icon,
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    left: 0.5rem;
+  }
+
+  &__arrow {
+    right: 0.5rem;
+    fill: none;
+    stroke: currentColor;
+  }
+
+  &--select {
+    .control__label {
+      color: var(--text-black);
+    }
+
+    .control__input {
+      width: 100%;
+      padding: 0.4rem 2rem 0;
+      height: 2.75rem;
+      color: var(--text-secondary);
+      font-size: var(--fs-sm);
+      border: 1px solid var(--bc-default);
+      background-color: var(--bg-light);
+      border-radius: 0.25rem;
+      -webkit-appearance: none;
+    }
+  }
+
+  &--numeric {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+
+    .control__wrap {
+      display: inline-block;
+      position: relative;
+      padding: 0 2.5rem;
+    }
+
+    .control__btn {
+      @extend .reset-button;
+
+      position: absolute;
+      top: 50%;
+      padding: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      padding-top: 0.15rem;
+      transform: translateY(-50%);
+      font-size: var(--fs-xxxl);
+
+      &--minus {
+        left: 0;
+      }
+
+      &--plus {
+        right: 0;
+      }
+    }
+
+    .control__input {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0;
+      font-size: var(--fs-xl);
+      line-height: 2.4rem;
+      color: var(--text-black);
+      text-align: center;
+      border: 2px solid var(--bc-default);
+      border-radius: 50%;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      & {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}
+
+::placeholder { 
+  color: inherit;
+  opacity: 1; 
+  text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 1; 
+  text-transform: uppercase;
+}
+
+::-ms-input-placeholder {
+  color: inherit;
+  opacity: 1; 
+  text-transform: uppercase;
+}

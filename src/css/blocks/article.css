@@ -1,0 +1,58 @@
+.article {
+  & + .article {
+    margin-top: 2.5rem;
+  }
+
+  &__header {
+    margin-top: 1.2rem;
+  }
+
+  &__heading {
+    font-size: var(--fs-default);
+    font-family: var(--ff-alt);
+    font-weight: bold;
+    line-height: 3;
+  }
+
+  &__subheading {
+    margin-top: -0.25rem;
+    font-size: var(--fs-sm);
+    line-height: 1.625;
+    color: var(--text-secondary);
+    text-transform: lowercase;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &-wrap {
+      width: 7.5rem;
+      height: 7.5rem;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    @extend .hyphens;
+
+    height: 10em;
+    margin-top: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+
+    &.js-collapse {
+      display: block;
+    }
+  }
+
+  &__button {
+    margin-top: 0.75rem;
+  }
+}

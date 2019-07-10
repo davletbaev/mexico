@@ -1,0 +1,15 @@
+.email {
+  text-align: center;
+
+  &__link {
+    @extend .link;
+
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+}

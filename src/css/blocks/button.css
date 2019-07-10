@@ -1,0 +1,48 @@
+.button {
+  @extend .reset-button;
+
+  display: inline-block;
+  --btn-color: inherit;
+  --btn-bg: transparent;
+  --btn-ff: var(--ff-alt);
+  --btn-fs: var(--fs-default);
+
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  font-family: var(--btn-ff);
+
+  &--primary {
+    width: 100%;
+    --btn-color: var(--white);
+    --btn-bg: var(--bg-accent);
+    height: 3rem;
+    line-height: 1;
+    padding: 1.1rem 1rem;
+    border-radius: 1.5rem;
+  }
+
+  &--inline {
+    position: relative;
+    line-height: 2;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.6em;
+      display: block;
+      width: 100%;
+      height: 0;
+      border-bottom: 1px solid currentColor;
+    }
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+}

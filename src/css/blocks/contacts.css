@@ -1,0 +1,20 @@
+.contacts {
+  text-align: center;
+
+  &__item {
+    & + .contacts__item {
+      margin-top: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: var(--fs-sm);
+  }
+
+  &__value {
+    color: inherit;
+    font-family: var(--ff-alt);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
