@@ -1,0 +1,129 @@
+<section class="section pricing">
+  <div class="container">
+    <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center heading--has-action">
+      Стоимость энерджи-тура
+    </h2>
+
+    <div class="pricing__grid">
+      <div class="pricing__form panel">
+        <form action="/" class="form form--sm">
+          <div class="form__group">
+            <label class="control control--select">
+              <span class="control__label control__label--bold">Выберете дату</span>
+              <div class="control__wrap">
+                {{ icon('calendar', 'control__icon') }}
+                <select class="control__input" name="date" id="date">
+                  <option value="09.11.19-23.11.19" selected>09 ноября - 23 ноября 2019</option>
+                  <option value="27.11.19-11.12.19" selected>27 ноября - 11 декабря 2019</option>
+                  <option value="15.12.19-29.12.19" selected>15 декабря - 29 декабря 2019</option>
+                </select>
+                {{ icon('arrow-bottom', 'control__arrow') }}
+              </div>
+            </label>
+          </div>
+
+          <div class="form__group form__group--border-b">
+            <span class="form__param">9/15 мест осталось</span>
+            <span class="form__param">14 дней</span>
+          </div>
+
+          <div class="form__group form__group--border-b">
+            <div class="price">
+              <strong class="price__current">$ 4100</strong>
+              <del class="price__prev">$13 000</del>
+            </div>
+          </div>
+
+          <div class="form__group form__group--padding-lg">
+            <label class="control control--numeric">
+              <span class="control__label">Кол-во мест:</span>
+              <div class="control__wrap">
+                <button type="button" class="control__btn control__btn--minus" aria-label="Уменьшить">
+                  -
+                </button>
+
+                <input class="control__input" type="number" name="seats" id="seats" value="1" min="1" max="6">
+
+                <button type="button" class="control__btn control__btn--plus" aria-label="Увеличить">
+                  +
+                </button>
+              </div>
+            </label>
+          </div>
+
+          <div class="form__group">
+            <p class="form__notice">
+              Для бронирования тура достаточно 2000$
+            </p>
+          </div>
+
+          <div class="form__group">
+            <button class="button button--primary button--uppercase button--bold button--block">
+              Хочу в Мексику
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <tabs-component inline-template>
+        <div class="pricing__tabs tabs">
+          <div class="tabs__nav tabs-nav">
+            <ul class="tabs-nav__list">
+              <li class="tabs-nav__item">
+                <a href="#included"
+                  class="tabs-nav__link"
+                  :class="{ 'js-active': tabPaneActive == 1 }"
+                  @click="showPane(1, $event)"
+                >Что входит</a>
+              </li>
+              <li class="tabs-nav__item">
+                <a href="#notincluded"
+                  class="tabs-nav__link"
+                  :class="{ 'js-active': tabPaneActive == 2 }"
+                  @click="showPane(2, $event)"
+                >Что не входит</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tabs__content">
+            <div class="tab-pane" key="included" id="included" v-if="tabPaneActive == 1">
+              <div class="tab-pane__content">
+                <ul class="list">
+                  <li>трансфер аэропорт-отель-аэропорт</li>
+                  <li>размещение в отелях 3-5* по маршруту, 4* на море</li>
+                  <li>питание: завтраки + все включено на море</li>
+                  <li>вода 2 л/день</li>
+                  <li>все активности по программе</li>
+                  <li>профессиональный гид</li>
+                  <li>комфортабельный транспорт с профессиональным водителем:<br>
+                      Mercedes-Benz/Volkswagen</li>
+                </ul>
+              </div>
+            </div>
+          
+            <div class="tab-pane" key="notincluded" id="notincluded" v-if="tabPaneActive == 2">
+              <div class="tab-pane__content">
+                <h5 class="heading heading--h5">Не включено:</h5>
+                <ul class="list">
+                  <li>трансфер аэропорт-отель-аэропорт</li>
+                  <li>размещение в отелях 3-5* по маршруту, 4* на море</li>
+                  <li>питание: завтраки + все включено на море</li>
+                  <li>вода 2 л/день</li>
+                  <li>все активности по программе</li>
+                  <li>профессиональный гид</li>
+                  <li>комфортабельный транспорт с профессиональным водителем:<br>
+                      Mercedes-Benz/Volkswagen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </tabs-component>
+
+      <div class="pricing__widget widget widget--aviasales">
+        Aviasales
+      </div>
+    </div>
+  </div>
+</section>

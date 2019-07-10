@@ -1,0 +1,69 @@
+<section class="section feedback">
+  <div class="container">
+    <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center heading--has-action">
+      Отзывы
+    </h2>
+
+    <div class="feedback__row">
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Bondarenko Nataly', 'article__img', 'img/feedback/bondarenko_nataly', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Bondarenko Nataly</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              В июле планировали 5-ти дневный тур по Юкатану семьей. Гидов на выбор было несколько, но так случилось, что остановились на Алине - изначально привлекла стоимость тура. И, признаюсь, немного волновались... Но что могу сказать - ни разу не пожалели о выборе! Алина большая умница! Отработала все 5 дней на полную катушку! Интересный, знающий, начитанный гид. Пять дней пути и 2600 км дороги, при том что с нами был 9-ти летний ребенок... Однако! В очередной раз убедилась, как же много зависит от гида! За эти долгие часы пути и непрерывного общения, нам удалось так много поговорить о стране, ее истории, культуре, характере, обычаях, загадках, и много о чем еще, чего не прочтешь ни в одном общедоступном путеводителе и источнике, что непременно захотелось вернуться, но только теперь уже не на Юкатан, конечно, а в центральную часть Мексики, и в несколько ином формате)). И непременно с этим гидом! Алиночка, приогромное спасибо вам! И до новых встреч!)
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Ushakov Artem', 'article__img', 'img/feedback/ushakov_artem', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Ushakov Artem</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              Алина, огромное спасибо за те несколько дней, что мы провели с Вами в путешествии по удивительной Мексике. К выбору гида всегда подхожу с особой трепетностью и тщательностью (ведь во многом именно от него как от проводника в культуру, быт страны зависит и впечатление о путешествии). 
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Kovaleva Julia', 'article__img', 'img/feedback/kovaleva_julia', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Kovaleva Julia</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              Мы с мужем ездили на 2 индивидуальные экскурсии с Алиной. Первая наша поездка была, скорее, телесно и духовно ориентированная, в Темаскаль - индейскую сауну. Здесь с помощью Алины мы окунулись в глубокую и эзотерическую традицию древних индейцев, которые воспринимают обряд сауны как перерождение и очищение.
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+    </div>
+  </div>
+</section>

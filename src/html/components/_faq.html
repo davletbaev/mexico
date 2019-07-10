@@ -1,0 +1,147 @@
+<section class="section faq">
+  <div class="section__cover">
+    {{ picture('Иллюстрация', 'section__cover-img', 'img/illustrations/illustration3', 'png') }}
+  </div>
+
+  <div class="container">
+    <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center">
+      Часто задаваемые вопросы
+    </h2>
+
+    {% set whattoknow = [
+      {
+        icon: 'flag-alt',
+        title: 'Язык',
+        desc: 'Основной язык – Испанский. Но также среди местного населения присутствует множество индейских диалектов. '
+      },
+      {
+        icon: 'institution',
+        title: 'Религия',
+        desc: 'В Мексике нет официальной государственной религии, страна открыта в религиозном плане. Но наиболее распространенная религия – католицизм.'
+      },
+      {
+        icon: 'money',
+        title: 'Валюта',
+        desc: 'Мексиканский песо. Во многих туристических зонах принимается к оплате также Американский доллар. Курс доллара на данный момент равен прибл. 18 песо за 1 доллар. В Мехико сити рекомендуется менять доллары в аэропорту. В Канкуне и на Ривьере Майя, наоборот, рекомендуется менять валюту в городе в обменных пунктах (в аэропорту курс выше всегда). '
+      },
+      {
+        icon: 'thermometer',
+        title: 'Климат',
+        desc: 'Тропический на юге и субтропический на севере. Температура зависит от региона. Климат приятный. Высокий пляжный сезон на побережье приходится на период с декабря по апрель. На Карибском побережье сезон длится круглый год, море теплое всегда. С сентября по начало ноября – сезон небольших ветров и дождя. В ноябре температура по нашему маршруту от 22°С до 28°С, в январе от 21°С до 26°С, ночью в Мехико может упасть до +7°С.'
+      },
+      {
+        icon: 'bus',
+        title: 'Трансорт',
+        desc: 'В Мексике действует большая разветвленная сеть внутренних недорогих авиаперевозчиков. Хорошо развито междугороднее автобусное сообщение. Автобусы чистые, комфортные и ходят по расписанию. Железнодорожное сообщение не развито в стране.'
+      },
+      {
+        icon: 'dish',
+        title: 'Кухня',
+        desc: 'Очень часто в блюдах присутствуют три компонента - острый перец чили, тортильяс (кукурузные лепешки) и фасоль или рис. Много мясных блюд (говядина, свинина, курица, баранина) и острых овощных, рыбы, морепродуктов, бобовых, специй. В Мексике много фруктов и овощей в течение всего года. Многие блюда готовятся на основе разного вида соусов как острых, так и не острых.'
+      },
+      {
+        icon: 'water',
+        title: 'Вода',
+        desc: 'Основной язык – Испанский. Но также среди местного населения присутствует множество индейских диалектов. '
+      },
+      {
+        icon: 'wallet',
+        title: 'Чаевые',
+        desc: 'Общепринятая норма – оставлять 10-15% от стоимости заказа. Чаевые принято оставлять всему обслуживающему персоналу, в том числе гиду и водителю. Это не обязательно, но всегда приветствуется (дело в том, что в Мексике очень низкие зарплаты в сфере обслуживания и люди этой занятности, в основном, живут на заработанные чаевые).'
+      },
+      {
+        icon: 'bolt',
+        title: 'Электричество',
+        desc: 'Напряжение электросети в Мексике составляет 110 Вольт. Розетки «американского» стиля. Обязательно берите с собой адапторы для телефонов, видео камер и т.п.'
+      },
+      {
+        icon: 'error-circle',
+        title: 'Таможня',
+        desc: 'Запрещен ввоз фруктов, овощей, мясных, молочных и рыбных изделий, растений, черенков и семян растений, цветов; медикаментов, которыми не пользуется пассажир; психотропных веществ; порнографических изданий.'
+      }
+    ] %}
+    <ul class="faq__list">
+      <li class="faq__item">
+        <accordion-component inline-template>
+          <div class="accordion" :class="{ 'js-active': isCollapsed }">
+            <button
+              class="accordion__heading heading heading--h5"
+              :class="{ 'js-active': isCollapsed }"
+              @click="collapseBlock"
+            >
+              Что нужно знать о Мексике
+            </button>
+
+            <div class="accordion__content" ref="collapse">
+              <div class="accordion__content-inner">
+                <ul class="list-block">
+                  {% for item in whattoknow %}
+                    <li class="list-block__item">
+                      <div class="media">
+                        {{ icon(item.icon, 'media__icon') }}
+                        <p class="media__title heading heading--h5">{{ item.title }}</p>
+                        <p class="media__desc">{{ item.desc }}</p>
+                      </div>
+                    </li>
+                  {% endfor %}
+                    <li>
+                      <div class="media">
+                        <p class="media__title">
+                          <span class="label label--bold">Важно</span>
+                        </p>
+                        <p class="media__desc">Разрешено ввозить только 20 пачек сигарет на человек, при обнаружении большего количества полагается штраф.</p>
+                      </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </accordion-component>
+      </li>
+
+      {% set questions = [
+        {
+          title: 'Про безопасность',
+          content: '<div style="display: flex; align-items: center; justify-content: center;background-color: var(--bg-light); min-height: 200px">Про безопасность</div>'
+        },
+        {
+          title: 'Как получить визу',
+          content: '<div style="display: flex; align-items: center; justify-content: center;background-color: var(--bg-light); min-height: 200px">Как получить визу</div>'
+        },
+        {
+          title: 'Стоимость авиабилетов',
+          content: '<div style="display: flex; align-items: center; justify-content: center;background-color: var(--bg-light); min-height: 200px">Стоимость авиабилетов</div>'
+        },
+        {
+          title: 'Зачем нужна страховка',
+          content: '<div style="display: flex; align-items: center; justify-content: center;background-color: var(--bg-light); min-height: 200px">Зачем нужна страховка</div>'
+        },
+        {
+          title: 'Как подготовиться к поездке',
+          content: '<div style="display: flex; align-items: center; justify-content: center;background-color: var(--bg-light); min-height: 200px">Как подготовиться к поездке</div>'
+        }
+      ] %}
+      {% for qs in questions %}
+        <li class="faq__item">
+          <accordion-component inline-template>
+            <div class="accordion" :class="{ 'js-active': isCollapsed }">
+              <button
+                class="accordion__heading heading heading--h5"
+                :class="{ 'js-active': isCollapsed }"
+                @click="collapseBlock"
+              >
+                {{ qs.title }}
+              </button>
+              
+              <div class="accordion__content" ref="collapse">
+                <div class="accordion__content-inner">
+                  {{ qs.content | safe }}
+                </div>
+              </div>
+            </div>
+          </accordion-component>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

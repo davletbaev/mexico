@@ -31,6 +31,10 @@
     stroke: currentColor;
   }
 
+  &__input {
+    @extend .reset-input;  
+  }
+
   &--select {
     .control__label {
       color: var(--text-black);
@@ -100,6 +104,42 @@
 
       & {
         -moz-appearance: textfield;
+      }
+    }
+  }
+
+  @media(--tablet) {
+    &--select {
+      .control__input {
+        padding: 0.3rem 2.5rem 0;
+      }
+    }
+
+    &--numeric {
+      .control__input {
+        padding-top: 0.15rem;
+      }
+    }
+
+    &__icon,
+    &__arrow {
+      font-size: var(--fs-lg);
+    }
+
+    &__icon {
+      left: 0.75rem;
+    }
+
+    &__arrow {
+      right: 0.75rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media(--desktop) {
+    &--numeric {
+      .control__input {
+        padding-top: 0.25rem;
       }
     }
   }

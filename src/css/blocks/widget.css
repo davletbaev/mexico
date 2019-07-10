@@ -7,4 +7,16 @@
   background-color: var(--bg-gray);
   border-radius: 0.4rem;
   overflow: hidden;
+
+  @media(--laptop) {
+    height: 30vw;
+
+    &--vk {
+      max-width: 20rem;
+      max-height: 12.5rem;
+    }
+  }
+
+  @media(--desktop) {
+  }
 }

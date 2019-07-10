@@ -1,8 +1,19 @@
 {% extends "layouts/_base.html" %}
 
-{% set title = "Home" %}
+{% set title = "Авторский энерджи-тур в Мексику" %}
 {% set currentPath = '/' %}
 
 {% block content %}
-  <h1 v-html="message">Hi!</h1>
-{% endblock %}
+  <main class="main">
+    {% include "components/_cover.html" %}
+    {% include "components/_recreation.html" %}
+    {% include "components/_call-to-action.html" %}
+    {% include "components/_program.html" %}
+    {% include "components/_live.html" %}
+    {% include "components/_team.html" %}
+    {% include "components/_pricing.html" %}
+    {% include "components/_feedback.html" %}
+    {% include "components/_faq.html" %}
+    {% include "components/_steps.html" %}
+  </main>
+{% endblock %}`

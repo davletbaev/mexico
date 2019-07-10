@@ -31,18 +31,18 @@ describe('Home', () => {
     await page.goto('http://localhost:5000/', {waitUntil: 'domcontentloaded'})
     await page.waitFor(2000)
     await page.screenshot({
-      path: 'tests/screenshots/home.png',
+      path: 'tests/screenshots/index.png',
       fullPage: true
     })
   });
   
-  test('page title should be equal "Home"', async () => {
+  test('page title should be equal "Авторский энерджи-тур в Мексику"', async () => {
     const title = await page.title()
-    expect(title).toEqual("Home")
+    expect(title).toEqual("Авторский энерджи-тур в Мексику")
   })
 
-  test('h1 tag should contain "Hello world!" text', async () => {
+  test('h1 tag should contain "Авторский энерджи-тур в Мексику" text', async () => {
     const h1 = await page.$eval('h1', el => el.textContent)
-    expect(h1).toEqual('Hello world!')
+    expect(h1).toEqual('Авторский энерджи-тур в Мексику')
   })
 })

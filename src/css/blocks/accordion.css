@@ -5,13 +5,18 @@
   box-shadow: 0;
   transition: border-color ease-out-quint 0.3s, box-shadow ease-out-quint 0.3s;
 
-  &.js-active {
+  &.js-active,
+  &:hover {
     border-color: transparent;
     box-shadow: var(--bs-default);
   }
   
   &__heading {
+    @extend .reset-button;
+
     position: relative;
+    display: block;
+    width: 100%;
     padding: 0 1.25rem;
     height: 3.2rem;
     line-height: 3.2rem;
@@ -20,6 +25,7 @@
     font-weight: normal;
     background-color: var(--bg-white);
     transition: background-color ease-out-quint 0.3s;
+    text-align: left;
 
     &:after {
       content: '';
@@ -46,6 +52,15 @@
         background-image: svg-load('../../img/svg/arrow-bottom.svg', fill=none, stroke=#fff)
       }
     }
+
+    &:focus {
+      color: var(--white);
+      background-color: var(--bg-accent);
+
+      &:after {
+        background-image: svg-load('../../img/svg/arrow-bottom.svg', fill=none, stroke=#fff);
+      }
+    }
   }
 
   &__content {
@@ -54,6 +69,12 @@
 
     &-inner {
       padding: 0 1.25rem 1.25rem;
+    }
+  }
+
+  @media(--tablet) {
+    &__heading {
+      font-size: var(--fs-default);
     }
   }
 }

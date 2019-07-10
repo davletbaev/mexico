@@ -1,8 +1,48 @@
+/* Normalize.css */
 @import "normalize.css";
 
+/* Global Styles */
+@import 'global/fonts';
 @import 'global/variables';
+@import 'global/utils';
 @import 'global/typography';
 @import 'global/default';
-@import 'global/fonts';
-@import 'global/utils';
 @import 'global/layout';
+@import 'global/icon';
+@import 'global/transitions';
+
+/* Blocks styles */
+@import 'blocks/accordion';
+@import 'blocks/article';
+@import 'blocks/button';
+@import 'blocks/contacts';
+@import 'blocks/control';
+@import 'blocks/developer';
+@import 'blocks/email';
+@import 'blocks/feature';
+@import 'blocks/form';
+@import 'blocks/label';
+@import 'blocks/legals';
+@import 'blocks/list-block';
+@import 'blocks/logo';
+@import 'blocks/media';
+@import 'blocks/menu';
+@import 'blocks/nav';
+@import 'blocks/panel';
+@import 'blocks/price';
+@import 'blocks/socials';
+@import 'blocks/tabs';
+@import 'blocks/text-block';
+@import 'blocks/toggle';
+@import 'blocks/widget';
+
+/* Sections styles */
+@import 'sections/call-to-action';
+@import 'sections/cover';
+@import 'sections/faq';
+@import 'sections/footer';
+@import 'sections/header';
+@import 'sections/pricing';
+@import 'sections/recreation';
+@import 'sections/steps';
+@import 'sections/team';

@@ -23,7 +23,7 @@ const genericTask = (mode = 'development') => {
           extensions: ['html']
         }
       },
-      ui: false,
+      ghostMode: false,
       https: true,
       port: 3000,
       open: false,
@@ -49,7 +49,7 @@ const genericTask = (mode = 'development') => {
     gulp.watch(paths.watch.icons)
     .on('all', gulp.series(
       Object.assign(tasks.clean(`${paths.dist.images}/icons.svg`), { displayName: 'Clean SVG Sprite' }),
-      Object.assign(tasks.sprite(mode), { displayName: `Watching SVG` }),
+      Object.assign(tasks.svg(mode), { displayName: `Watching SVG` }),
       Object.assign(bs.reload, { displayName: `Reloading browser` })
     ))
 
@@ -93,7 +93,7 @@ const genericTask = (mode = 'development') => {
     Object.assign(tasks.scripts(mode), { displayName: `Build Scripts - ${ modeType }` }),
     Object.assign(tasks.styles(mode), { displayName: `Build Styles - ${ modeType }` }),
     Object.assign(tasks.images(mode), { displayName: `Build Images - ${ modeType }` }),
-    Object.assign(tasks.sprite(mode), { displayName: `Build PNG Sprite- ${ modeType }` }),
+    // Object.assign(tasks.sprite(mode), { displayName: `Build PNG Sprite- ${ modeType }` }),
     Object.assign(tasks.svg(mode), { displayName: `Build SVG Sprite- ${ modeType }` }),
     Object.assign(tasks.fonts(mode), { displayName: `Build Fonts - ${ modeType }` }),
     isDev && Object.assign(startBrowserSync, { displayName: `Browser Loading & Watching Task` }),

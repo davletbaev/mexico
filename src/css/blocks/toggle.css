@@ -19,6 +19,14 @@
       color: var(--white);
       z-index: 2;
     }
+
+    &:hover,
+    &:focus {
+      .toggle__img {
+        will-change: transform;
+        transform: scale(1.05);
+      }
+    }
   }
 
   &--nav {
@@ -70,7 +78,9 @@
   &__img {
     width: 100%;
     height: 100%;
-    ovject-fit: cover;
+    object-fit: cover;
+    object-position: center;
+    transition: transform ease-out-quint 0.3s;
 
     &-wrap {
       position: relative;
@@ -92,7 +102,10 @@
     }
   }
 
-  &__item {
-    
+  @media(--tablet) {
+    &--video {
+      width: 4.9rem;
+      height: 4.9rem;
+    }
   }
 }

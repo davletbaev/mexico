@@ -1,5 +1,6 @@
 .logo {
   display: inline-block;
+  line-height: 1;
 
   &__img {
     width: 8em;

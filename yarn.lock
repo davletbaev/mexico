@@ -3027,6 +3027,38 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
+css-font-size-keywords@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-font-size-keywords/-/css-font-size-keywords-1.0.0.tgz#854875ace9aca6a8d2ee0d345a44aae9bb6db6cb"
+  integrity sha1-hUh1rOmspqjS7g00WkSq6btttss=
+
+css-font-stretch-keywords@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/css-font-stretch-keywords/-/css-font-stretch-keywords-1.0.1.tgz#50cee9b9ba031fb5c952d4723139f1e107b54b10"
+  integrity sha1-UM7puboDH7XJUtRyMTnx4Qe1SxA=
+
+css-font-style-keywords@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/css-font-style-keywords/-/css-font-style-keywords-1.0.1.tgz#5c3532813f63b4a1de954d13cea86ab4333409e4"
+  integrity sha1-XDUygT9jtKHelU0TzqhqtDM0CeQ=
+
+css-font-weight-keywords@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-font-weight-keywords/-/css-font-weight-keywords-1.0.0.tgz#9bc04671ac85bc724b574ef5d3ac96b0d604fd97"
+  integrity sha1-m8BGcayFvHJLV07106yWsNYE/Zc=
+
+css-global-keywords@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/css-global-keywords/-/css-global-keywords-1.0.1.tgz#72a9aea72796d019b1d2a3252de4e5aaa37e4a69"
+  integrity sha1-cqmupyeW0Bmx0qMlLeTlqqN+Smk=
+
+css-list-helpers@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/css-list-helpers/-/css-list-helpers-1.0.1.tgz#fff57192202db83240c41686f919e449a7024f7d"
+  integrity sha1-//VxkiAtuDJAxBaG+RnkSacCT30=
+  dependencies:
+    tcomb "^2.5.0"
+
 css-loader@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-1.0.1.tgz#6885bb5233b35ec47b006057da01cc640b6b79fe"
@@ -3093,6 +3125,11 @@ css-selector-tokenizer@^0.7.0:
     cssesc "^0.1.0"
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
+
+css-system-font-keywords@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-system-font-keywords/-/css-system-font-keywords-1.0.0.tgz#85c6f086aba4eb32c571a3086affc434b84823ed"
+  integrity sha1-hcbwhquk6zLFcaMIav/ENLhII+0=
 
 css-tree@1.0.0-alpha.28:
   version "1.0.0-alpha.28"
@@ -8729,6 +8766,21 @@ parse-asn1@^5.0.0:
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
 
+parse-css-font@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/parse-css-font/-/parse-css-font-2.0.2.tgz#7b60b060705a25a9b90b7f0ed493e5823248a652"
+  integrity sha1-e2CwYHBaJam5C38O1JPlgjJIplI=
+  dependencies:
+    css-font-size-keywords "^1.0.0"
+    css-font-stretch-keywords "^1.0.1"
+    css-font-style-keywords "^1.0.1"
+    css-font-weight-keywords "^1.0.0"
+    css-global-keywords "^1.0.1"
+    css-list-helpers "^1.0.1"
+    css-system-font-keywords "^1.0.0"
+    tcomb "^2.5.0"
+    unquote "^1.1.0"
+
 parse-data-uri@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/parse-data-uri/-/parse-data-uri-0.2.0.tgz#bf04d851dd5c87b0ab238e5d01ace494b604b4c9"
@@ -9277,6 +9329,14 @@ postcss-modules@^1.4.1:
     postcss "^7.0.1"
     string-hash "^1.1.1"
 
+postcss-nested@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-4.1.2.tgz#8e0570f736bfb4be5136e31901bf2380b819a561"
+  integrity sha512-9bQFr2TezohU3KRSu9f6sfecXmf/x6RXDedl8CHF6fyuyVW7UqgNMRdWMHZQWuFY6Xqs2NYk+Fj4Z4vSOf7PQg==
+  dependencies:
+    postcss "^7.0.14"
+    postcss-selector-parser "^5.0.0"
+
 postcss-nesting@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-7.0.0.tgz#6e26a770a0c8fcba33782a6b6f350845e1a448f6"
@@ -9365,6 +9425,15 @@ postcss-normalize-whitespace@^4.0.2:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
+postcss-object-fit-images@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/postcss-object-fit-images/-/postcss-object-fit-images-1.1.2.tgz#8b773043db14672ef6cd6f2cb1f0d8b26a9f573b"
+  integrity sha1-i3cwQ9sUZy72zW8ssfDYsmqfVzs=
+  dependencies:
+    parse-css-font "^2.0.2"
+    postcss "^5.0.16"
+    quote "^0.4.0"
+
 postcss-ordered-values@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/postcss-ordered-values/-/postcss-ordered-values-4.1.2.tgz#0cf75c820ec7d5c4d280189559e0b571ebac0eee"
@@ -9411,7 +9480,7 @@ postcss-selector-parser@3.1.1, postcss-selector-parser@^3.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^5.0.0-rc.4:
+postcss-selector-parser@^5.0.0, postcss-selector-parser@^5.0.0-rc.4:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-5.0.0.tgz#249044356697b33b64f1a8f7c80922dddee7195c"
   integrity sha512-w+zLE5Jhg6Liz8+rQOWEAwtwkyqpfnmsinXjXg6cY7YIONZZtgvE0v2O0uhQBs0peNomOJwWRKt6JBfTdTd3OQ==
@@ -9463,7 +9532,7 @@ postcss@6.0.1:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^5.0.4:
+postcss@^5.0.16, postcss@^5.0.4:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   integrity sha512-zrUjRRe1bpXKsX1qAJNJjqZViErVuyEkMTRrwu4ud4sbTtIBRmtaYDrHmcGgmrbsW3MHfmtIf+vJumgQn+PrXg==
@@ -9746,6 +9815,11 @@ quote-stream@~0.0.0:
   dependencies:
     minimist "0.0.8"
     through2 "~0.4.1"
+
+quote@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/quote/-/quote-0.4.0.tgz#10839217f6c1362b89194044d29b233fd7f32f01"
+  integrity sha1-EIOSF/bBNiuJGUBE0psjP9fzLwE=
 
 randomatic@^3.0.0:
   version "3.1.1"
@@ -11394,6 +11468,11 @@ tar@^4, tar@^4.4.8:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
+tcomb@^2.5.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/tcomb/-/tcomb-2.7.0.tgz#10d62958041669a5d53567b9a4ee8cde22b1c2b0"
+  integrity sha1-ENYpWAQWaaXVNWe5pO6M3iKxwrA=
+
 temp-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
@@ -11947,7 +12026,7 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
-unquote@~1.1.1:
+unquote@^1.1.0, unquote@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/unquote/-/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
   integrity sha1-j97XMk7G6IoP+LkF58CYzcCG1UQ=

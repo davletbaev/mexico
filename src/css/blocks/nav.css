@@ -31,6 +31,31 @@
       z-index: -1;
     }
   }
+
+  @media(--tablet) {
+    &__socials {
+      margin: 0 auto;
+      font-size: 1.5rem;
+    }
+  }
+
+  @media(--laptop) {
+    &__mobile {
+      position: static;
+      display: block;
+      height: auto;
+      padding: 0;
+      background: none;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &__socials {
+      display: none;
+    }
+  }
 }
 
 .has-webp {

@@ -1,0 +1,158 @@
+.footer {
+  padding: 2rem 0;
+  font-family: var(--ff-secondary);
+  color: var(--white);
+  background-color: var(--bg-accent);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & + .footer__row {
+      margin-top: 2rem;
+    }
+  }
+
+  &__item {
+    width: 100%;
+
+    & + .footer__item {
+      margin-top: 2rem;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: var(--fs-xl);
+  }
+
+
+  &__socials {
+    .socials__list {
+      justify-content: center;
+    }
+
+    .socials__link {
+      color: var(--white);
+    }
+  }
+
+  &__widget {
+    margin-top: 2rem;
+  }
+
+  &__privacy {
+    @extend .link;
+
+    display: inline-block;
+    line-height: 1;
+    margin-top: 2rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color ease-out-quint 0.3s;
+
+    &:hover,
+    &:focus {
+      color: var(--white);
+      border-color: currentColor;
+    }
+  }
+
+  &__copyright {
+    @extend .hyphens;
+  }
+
+  @media(--tablet) {
+    &__row {
+      &:first-child {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .footer__item {
+          & + .footer__item {
+            margin-top: 0;
+            margin-left: 2.5rem;
+          }
+        }
+      }
+    }
+
+    &__logo {
+      text-align: left;
+    }
+
+    &__socials {
+      .socials__list {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @media(--laptop) {
+    font-size: var(--fs-xs);
+
+    &__row {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+      
+
+    &__item {
+      & + .footer__item {
+        margin-top: 0;
+        margin-left: 2.5rem;
+      }
+
+      &:last-child {
+        flex: 0 0 14rem;
+      }
+    }
+
+    &__logo {
+      font-size: var(--fs-default);
+    }
+
+    &__socials {
+      .socials__list {
+        justify-content: flex-start;
+      }
+
+      .socials__link {
+        transition: opacity ease-out-quint 0.3s;
+
+        &:hover,
+        &:focus {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__privacy {
+      transition: border-color ease-out-quint 0.3s;
+
+      &:hover,
+      &:focus {
+        color: var(--white);
+        border-color: currentColor;
+      }
+    }
+
+    &__copyright {
+      font-size: var(--fs-xxs);
+      max-width: 35rem;
+    }
+
+    &__developer {
+      margin-top: 2.5rem;
+      flex: 0 0 auto;
+      font-size: var(--fs-xxs);
+    }
+  }
+}

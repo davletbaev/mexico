@@ -1,9 +1,11 @@
 .text-block {
   &__pic {
+    margin: 0 auto;
     position: relative;
     width: 100%;
-    padding-bottom: 60%;
-    height: 0;
+    max-width: 17rem;
+    max-height: 10.5rem;
+    height: 10.5rem;
 
     &-icon {
       position: absolute;
@@ -24,6 +26,7 @@
       bottom: 0;
       transform: rotate(8.3deg) translateY(5%);
       background-size: 100%;
+      background-repeat: no-repeat;
       background-position: center;
       background-image: url('../img/illustrations/illustration4@1x.png');
     }
@@ -35,6 +38,13 @@
 
     & + .text-block__text {
       margin-top: 1.2rem;
+    }
+  }
+
+  @media(--tablet) {
+    &__text {
+      hyphens: none;
+      text-align: center;
     }
   }
 }

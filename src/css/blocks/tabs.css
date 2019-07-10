@@ -2,6 +2,12 @@
   &__content {
     margin-top: 2rem;
   }
+
+  @media(--laptop) {
+    &__content {
+      margin-top: 1.5rem;
+    }
+  }
 }
 
 .tabs-nav {
@@ -15,6 +21,7 @@
   &__list {
     @extend .reset-list;
 
+    min-width: 100%;
     flex: 0 0 auto;
     --tabs-border: var(--bc-default);
     border-bottom: 2px solid var(--tabs-border);
@@ -57,6 +64,11 @@
       --tabs-border: var(--accent);
     }
   }
+
+  @media(--tablet) {
+    margin: 0 -2.5rem;
+    padding: 0 2.5rem;
+  }
 }
 
 .tab-pane {
@@ -65,22 +77,18 @@
     overflow-x: scroll;
     margin: 0 -1.25rem;
     padding: 0 1.25rem;
+  }
 
-    & > picture + picture {
+  &__picture-wrap {
+    & + .tab-pane__picture-wrap {
       margin-left: 0.4rem;
-    }
-
-    .tab-pane__img {
-      display: flex;
-      flex: 0 0 auto;
-      width: auto;
-      height: 200px;
     }
   }
 
   &__img {
-    width: 100%;
-    height: auto;
+    display: flex;
+    width: auto;
+    height: 200px;
   }
 
   &__content {
@@ -93,6 +101,10 @@
     & > p {
       @extend .hyphens;
       margin-top: 0.5rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     b {
@@ -103,5 +115,70 @@
 
   &__advice {
     margin-top: 2rem;
+  }
+
+  @media(--laptop) {
+    display: flex;
+
+    &__pictures {
+      display: grid;
+      grid-gap: 0.25rem;
+      order: 2;
+      flex: 0 0 30%;
+      max-width: 21rem;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      &--lg {
+        max-width: 23rem;
+      }
+    }
+
+    &__picture-wrap {
+      width: 100%;
+      height: 100%;
+      flex: 0 0 33%;
+
+      & + .tab-pane__picture-wrap {
+        margin-left: 0;
+      }
+    }
+
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__content {
+      margin-top: 0;
+      font-size: var(--fs-xs);
+
+      & > p {
+        margin-top: 0.25rem;
+      }
+
+      .label {
+        height: 1.75em;
+        padding: 0.45em 0.5em 0;
+      }
+
+      .media__desc {
+        margin-top: 0.4em;
+      }
+    }
+
+    &.panel > .tab-pane__content {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  @media(--desktop) {
+    &__pictures {
+      flex: 0 0 auto;
+    }
   }
 }

@@ -16,5 +16,27 @@
     font-family: var(--ff-alt);
     font-weight: 700;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color ease-out-quint 0.3s;
+
+    &:hover,
+    &:focus {
+      border-color: currentColor;
+    }
+  }
+
+  @media(--tablet) {
+    text-align: left;
+  }
+
+  @media(--desktop) {
+    display: flex;
+
+    &__item {
+      & + .contacts__item {
+        margin-top: 0;
+        margin-left: 2.5rem; 
+      }
+    }
   }
 }

@@ -29,5 +29,27 @@
   border: 0;
   box-shadow: none;
   background: none;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.link {
+  --color-link: inherit;
+  color: var(--color-link);
+  text-decoration: none;
+
+
+  @media (--laptop) {
+    transition: color ease-out-quint 0.3s;
+
+    &:hover,
+    &:focus {
+      --color-link: var(--accent);
+    }
+  }
+}
+
+.hyphens {
+  hyphens: auto;
+  text-align: justify;
 }

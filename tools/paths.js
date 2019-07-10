@@ -5,7 +5,7 @@ const paths = {
     css: 'src/css/*.css',
     js: 'src/js/**/*.js',
     images: ['src/img/**/*.{jpg,jpeg,png,webp}', '!src/img/icons/**/*'],
-    icons: ['src/img/icons/**/*.svg','src/img/logo/*.svg'],
+    icons: ['src/img/svg/**/*.svg','src/img/logo/*.svg'],
     fonts: 'src/fonts/**/*',
     favicon: 'src/favicon/**/*.ico',
     config: {
@@ -17,7 +17,7 @@ const paths = {
     css: 'src/css/**/*.css',
     js: 'src/js/**/*.js',
     images: 'src/img/**/*.{jpg,jpeg,png,webp}',
-    icons: ['src/img/icons/svg/**/*.svg','src/img/logo/*.svg'],
+    icons: ['src/img/svg/**/*.svg','src/img/logo/*.svg'],
     fonts: 'src/fonts/**/*.{ttf,woff,woff2}',
     favicon: 'src/favicon/**/*.ico',
     config: {

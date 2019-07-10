@@ -1,0 +1,30 @@
+.call-to-action {
+  &__text {
+    @extend .hyphens;
+    font-size: var(--fs-xl);
+    line-height: 1.5;
+  }
+
+  &__button {
+    margin-top: 2rem;
+  }
+
+  @media(--tablet) {
+    text-align: center;
+
+    .container {
+      max-width: 900px;
+    }
+
+    &__text {
+      hyphens: none;
+      text-align: center;
+    }
+  }
+
+  @media(--laptop) {
+    &__text {
+      font-size: var(--fs-xxl);
+    }
+  }
+}

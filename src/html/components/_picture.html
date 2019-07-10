@@ -2,21 +2,21 @@
   <picture>
     <source
       media="(max-width: 56em)"
-      srcset="{{ path }}@0.5x.webp 1x, {{ path }}@1x.webp 2x"
+      srcset="{{ path }}@1x.webp 1x, {{ path }}@2x.webp 2x"
       type="image/webp"
     > 
     <source
       media="(max-width: 56em)"
-      srcset="{{ path }}@0.5x.{{ ext }} 1x, {{ path }}@1x.{{ ext }} 2x"
+      srcset="{{ path }}@1x.{{ ext }} 1x, {{ path }}@2x.{{ ext }} 2x"
     >
     <source
-      srcset="{{ path }}@1x.webp 1x, {{ path }}@2x.webp 2x"
+      srcset="{{ path }}@1.5x.webp 1x, {{ path }}@3x.webp 2px"
       type="image/webp"
     >
     <img
       {% if classname %}class="{{ classname }}"{% endif %}
-      src="{{ path }}@1x.{{ ext }}"
-      srcset="{{ path }}@2x.{{ ext }} 2x"
+      src="{{ path }}@1.5x.{{ ext }}"
+      srcset="{{ path }}@3x.{{ ext }} 2x"
       alt="{{ alt }}"
     >
   </picture>

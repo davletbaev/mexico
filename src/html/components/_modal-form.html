@@ -1,0 +1,58 @@
+<modal-component v-if="formShow" inline-template>
+  <div class="modal modal--form">
+    <div class="modal__inner">
+      <button class="modal__close">
+        {{ icon('cross', 'modal__close-icon') }}
+      </button>
+      <div class="modal__content">
+        <h3 class="heading heading--h3 heading--text-center">Заполни форму для получения презентации по туру</h3>
+
+        <contact-form>
+          <form action="/" class="form form--lg">
+            <div class="form__group">
+              <label class="control">
+                <input type="text" class="control__input" name="name" required>
+                <div class="control__label">Имя</div>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <label class="control">
+                <input type="text" class="control__input" name="name" required>
+                <div class="control__label">Телефон/WhatsApp</div>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <label class="control">
+                <input type="text" class="control__input" name="name" required>
+                <div class="control__label">E-mail или ID в соц. сетях</div>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <label class="control">
+                <input type="text" class="control__input" name="city" required>
+                <div class="control__label">Город</div>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <label class="control control--checkbox">
+                <input type="checkbox" name="agree" class="control__input" required>
+                <span class="control__check">
+                  {{ icon('checked', 'control__check-icon') }}
+                </span>
+                <span class="control__label">Я даю свое согласие на обработку персональных данных и соглашаюсь с условиями и политикой конфиденциальности</span>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <button class="button--primary button--uppercase button--bold button--block" type="submit">Прислать программу</button>
+            </div>
+          </form>
+        </contact-form>
+      </div>
+    </div>
+  </div>
+</modal-component>

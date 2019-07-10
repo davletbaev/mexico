@@ -1,15 +1,49 @@
 .email {
   text-align: center;
 
+  &__label {
+    line-height: 1;
+    border-bottom: 1px solid transparent;
+    transition: border-color ease-out-quint 0.3s;
+  }
+
   &__link {
     @extend .link;
 
     display: inline-flex;
     align-items: center;
+      
+    &:hover,
+    &:focus {
+      .email__label {
+        color: var(--white);
+        border-color: currentColor;
+      }
+    }
   }
 
   &__icon {
     margin-right: 0.5rem;
     font-size: 1.2rem;
+  }
+
+  @media(--tablet) {
+    text-align: right;
+  }
+
+  @media(--laptop) {
+    text-align: left;
+
+    &__link {
+      &:hover,
+      &:focus {
+        --color-link: var(--white);
+
+        .email__label {
+          color: var(--white);
+          border-color: currentColor;
+        }
+      }
+    }
   }
 }

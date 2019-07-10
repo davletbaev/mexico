@@ -11,12 +11,13 @@ const sourcemaps   = require('gulp-sourcemaps')
 const cssvars      = require('postcss-css-variables')
 const custommedia  = require('postcss-custom-media')
 const easings      = require('postcss-easings')
-const nesting      = require('postcss-nesting')
+const nesting      = require('postcss-nested')
 const inlinesvg    = require('postcss-inline-svg')
 const colorfunc    = require('postcss-color-function')
 const qqueries     = require('postcss-quantity-queries')
 const cssimport    = require('postcss-import')
 const extend       = require('postcss-extend')
+const objectfit     = require('postcss-object-fit-images')
 
 const paths = require('../paths')
 
@@ -24,27 +25,29 @@ const buildStyles = (mode, bs) => (done) => {
   const plugins =  [
     cssimport,
     nesting,
-    mqpacker({
-      sort: sortCSSmq
-    }),
     extend,
     cssvars({
       preserve: true
     }),
-    custommedia({
-      preserve: true
-    }),
+    custommedia,
     colorfunc,
     inlinesvg,
     qqueries,
     easings({
-      easings: { easeJump: 'cubic-bezier(.86,0,.69,1.57)' }
+      easings: {
+        easeJump: 'cubic-bezier(.86,0,.69,1.57)',
+        easeOutBounce: 'cubic-bezier(0.39, 0.575, 0.565, 1)'
+      }
+    }),
+    mqpacker({
+      sort: sortCSSmq
     }),
     autoprefixer({
       grid: 'autoplace'
     }),
     flexbugs,
     ...((mode === 'production') ? [
+      objectfit,
       uncss({
         html: ['dist/**/*.html'],
         ignore: ['\.js-.*', '--']

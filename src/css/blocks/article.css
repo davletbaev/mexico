@@ -55,4 +55,10 @@
   &__button {
     margin-top: 0.75rem;
   }
+
+  @media(--laptop) {
+    & + .article {
+      margin-top: 0;
+    }
+  }
 }

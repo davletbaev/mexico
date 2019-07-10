@@ -1,0 +1,92 @@
+<section class="section team">
+  <div class="container">
+    <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center heading--has-action">
+      Наша команда
+    </h2>
+
+    <div class="team__row">
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Алина Стрелец де Кастро', 'article__img', 'img/team/alina_strelec_de_castro', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Алина Стрелец де Кастро*</p>
+            <p class="article__subheading">(Лицензированный гид Мексики, лингвист)</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              Я живу и работаю в Мексике 9 лет.  За это время у меня появился не только опыт организации бессчетного количества уникальных исторических, экологических и развлекательных туров, но и мексиканская семья :) что помогло еще более тесному соприкосновению с «настоящей Мексикой». С момента приезда сюда я вдруг стала чувствовать, что жизнь — это бесконечный праздник, где, чтобы ты ни делал, тебе все в удовольствие. Ни разу у меня не возникало ощущения, что я нахожусь «на работе».
+            </p>
+            <p>
+              Именно так создавался данный тур, в него мы вложили лучшее!
+            </p>
+            <p>
+              Получился очень насыщенный, РЕДКИЙ и ЭКСКЛЮЗИВНЫЙ маршрут, много активностей, разнообразие пейзажей и эзотерика!
+            </p>
+            <p>
+              Мы получим «взгляд изнутри» на жизнь местного населения, его традиции, быт, мировоззрение, прочувствуем истинный Дух страны!
+            </p>
+            <br>
+            <p>
+              Три хорошие вещи, которые нужно знать про Мексику: потрясающая природа, древние традиции, похожий на русский менталитет.
+            </p>
+            <p>
+              И три плохие: ацтеки были каннибалами, мексиканцы лучше русских играют в футбол, и, если мексиканец говорит ahorita («сейчас, минуточку») — это значит «никогда».
+            </p>
+            <br>
+            <p>
+              *автор текстов для сайта energytravel.com
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Наталья Нечаева', 'article__img', 'img/team/nataly_nechaeva', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Наталья Нечаева</p>
+            <p class="article__subheading">(Основатель компании Energy TRAVEL, сертифицированный организатор авторских туров, эколог)</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              Я - бесконечный путешественник. За 18 лет активного изучения мира я посетила более 40 стран. Туристические агентства никогда не могли создать для меня идеальное путешествие. Я люблю созерцать природные чудеса света, пускаться в здоровые авантюры, но вечером посещать театры и концерты классической музыки, поэтому я стала создавать авторские маршруты для себя и своих друзей
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+
+      <article-component inline-template>
+        <article class="article">
+          <div class="article__img-wrap">
+            {{ picture('Милена Леоненко', 'article__img', 'img/team/milena_leonenko', 'jpg') }}
+          </div>
+
+          <div class="article__header">
+            <p class="article__heading">Милена Леоненко</p>
+            <p class="article__subheading">(Основатель компании Energy TRAVEL, бизнес-архитектор)</p>
+          </div>
+
+          <div class="article__content" ref="collapse">
+            <p>
+              Наше знакомство с Натальей произошло на одном из мероприятий, посвящённом развитию бизнес-проектов в Санкт-Петербурге. Некоторое время спустя наши дороги вновь сошлись, на этот раз - на одной из энергетических практик, после решили поужинать в тихом и уютном месте. В этот удивительный вечер, мы долго говорили. Основной темой разговора выступала - энергия. Ее источники, методы и способы восстановления.
+            </p>
+          </div>
+
+          <button class="article__button button button--inline" @click="collapseBlock">{{ "{{ isCollapsed ? 'Скрыть' : 'Подробнее' \}}" | safe }}</button>
+        </article>
+      </article-component>
+    </div>
+  </div>
+</section>

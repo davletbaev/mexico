@@ -1,7 +1,23 @@
-/*
 @font-face {
-  font-family: "Rubik";
+  font-family: "Intro Book";
   font-weight: 400;
-  src: local("Rubik-Regular"), local("Rubik Regular"), url("assets/fonts/Rubik-Regular.woff") format("woff");
+  src: local("Intro-Book"), local("Intro Book"), url("../fonts/Intro-Book.woff2") format("woff2"), url("../fonts/Intro-Book.woff") format("woff");
 }
-*/
+
+@font-face {
+  font-family: "Intro";
+  font-weight: 400;
+  src: local("Intro-Regular"), local("Intro Regular"), url("../fonts/Intro-Regular.woff2") format("woff2"), url("../fonts/Intro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Intro Alt";
+  font-weight: 400;
+  src: local("Intro-Regular-Alt"), local("Intro Regular Alt"), url("../fonts/Intro-Regular-Alt.woff2") format("woff2"), url("../fonts/Intro-Regular-Alt.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Intro Alt";
+  font-weight: 700;
+  src: local("Intro-Bold-Alt"), local("Intro Bold Alt"), url("../fonts/Intro-Bold-Alt.woff2") format("woff2"), url("../fonts/Intro-Bold-Alt.woff") format("woff");
+}

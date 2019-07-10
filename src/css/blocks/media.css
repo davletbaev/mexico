@@ -1,17 +1,20 @@
 .media {
   &__icon {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.25em;
     color: var(--accent);
     font-size: 2.125rem;
   }
 
   &__title {
+    margin-top: 0.8em;
     font-size: var(--fs-default);
-    line-height: 3;
+    line-height: 1.2;
   }
 
   &__desc {
     @extend .hyphens;
+
+    margin-top: 0.8em;
   }
 
   & + .media {

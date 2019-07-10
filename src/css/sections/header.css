@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  background-color: var(--bg-white);
+  box-shadow: 0;
+  transition: box-shadow ease-out-quint 0.3s;
+  z-index: 1000;
+
+  .container {
+    height: 100%;
+  }
+
+  &.js-scrolling {
+    box-shadow: var(--bs-default);
+  }
+}
