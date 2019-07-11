@@ -11,6 +11,9 @@
 @import 'global/icon';
 @import 'global/transitions';
 
+/* Vendor Styles */
+@import "vendor/swiper";
+
 /* Blocks styles */
 @import 'blocks/accordion';
 @import 'blocks/article';
@@ -27,6 +30,7 @@
 @import 'blocks/logo';
 @import 'blocks/media';
 @import 'blocks/menu';
+@import 'blocks/modal';
 @import 'blocks/nav';
 @import 'blocks/panel';
 @import 'blocks/price';

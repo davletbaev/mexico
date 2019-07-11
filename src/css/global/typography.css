@@ -62,6 +62,14 @@ p {
   margin: 0;
 }
 
+.text-success {
+  color: var(--accent);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
 .list {
   @extend .reset-list;
 

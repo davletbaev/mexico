@@ -1,0 +1,15 @@
+<transition name="fade">
+  <div v-if="modals.video" class="modal modal--video" v-cloak @click.self="toggleModal('video')" role="dialog">
+    <div class="modal__inner">
+      <button class="modal__close" @click="toggleModal('video')">
+        {{ icon('cross', 'modal__close-icon') }}
+      </button>
+
+      <div class="modal__content">
+        <div class="video widget">
+          Video
+        </div>
+      </div>
+    </div>
+  </div>
+</transition>

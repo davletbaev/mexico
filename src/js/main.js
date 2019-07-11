@@ -1,13 +1,12 @@
-import Vue from 'vue';
+import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+import { Accordion, Article, Header, FormRequest, FormPricing, Modal, Tabs } from './components'
+import { SmoothScroll } from './mixins'
 import { debounce } from './utils'
 
-import HeaderComponent from './components/Header';
-import TabsComponent from './components/Tabs';
-import ArticleComponent from './components/Article';
-import AccordionComponent from './components/Accordion';
-import ModalComponent from './components/Modal';
-import ContactForm from './components/Form';
+Vue.use(VueAwesomeSwiper);
+
 
 const vm = new Vue({
   el: '#app',
@@ -16,7 +15,23 @@ const vm = new Vue({
     bodyFixed: false,
     prevScroll: 0,
     screenWidth: window.innerWidth,
-    formShow: false,
+    selectedTour: null,
+    modals: {
+      form: false,
+      video: false
+    },
+    swiperOptions: {
+      spaceBetween: 30,
+      speed: 500,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction'
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    }
   },
   methods: {
     supportsWebp() {
@@ -28,7 +43,7 @@ const vm = new Vue({
 
       return false;
     },
-    fixBody() {
+    fixBody(withHack = true) {
       !this.bodyFixed && (this.prevScroll = window.pageYOffset)
 
 
@@ -37,25 +52,37 @@ const vm = new Vue({
 
         window.scrollTo(0, this.prevScroll)
         document.body.classList.toggle('js-modal-open', this.bodyFixed)
+        withHack && document.body.classList.toggle('js-ios-hack', this.bodyFixed)
       } else {
         this.bodyFixed = true
         
         setTimeout(() => {
           document.body.classList.toggle('js-modal-open', this.bodyFixed)
+          withHack && document.body.classList.toggle('js-ios-hack', this.bodyFixed)
         }, 300)
       }
     },
-    handleResize() {
-      this.screenWidth = window.innerWidth;
+    toggleModal(modal) {
+      this.modals[modal] = !this.modals[modal]
+      this.fixBody(false)
     },
+    handleResize() {
+      this.screenWidth = window.innerWidth
+    },
+    handlePricingForm(formData) {
+      this.selectedTour = formData
+      this.toggleModal('form')
+    }
   },
+  mixins: [
+    SmoothScroll
+  ],
   components: {
-    HeaderComponent,
-    TabsComponent,
-    ArticleComponent,
-    AccordionComponent,
-    ModalComponent,
-    ContactForm
+    HeaderComponent: Header,
+    TabsComponent: Tabs,
+    ArticleComponent: Article,
+    AccordionComponent: Accordion,
+    ModalComponent: Modal
   },
   mounted() {
     this.hasWebp = this.supportsWebp();

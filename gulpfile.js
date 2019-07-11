@@ -96,9 +96,9 @@ const genericTask = (mode = 'development') => {
     // Object.assign(tasks.sprite(mode), { displayName: `Build PNG Sprite- ${ modeType }` }),
     Object.assign(tasks.svg(mode), { displayName: `Build SVG Sprite- ${ modeType }` }),
     Object.assign(tasks.fonts(mode), { displayName: `Build Fonts - ${ modeType }` }),
+    Object.assign(tasks.favicon(mode), { displayName: `Build Favicon - ${ modeType }` }),
     isDev && Object.assign(startBrowserSync, { displayName: `Browser Loading & Watching Task` }),
-    !isDev && Object.assign(tasks.noindex, { displayName: `Added Robots.txt to prevent indexing` }),
-    !isDev && Object.assign(tasks.revision, { displayName: `Creating New Revision` })
+    !isDev && Object.assign(tasks.noindex, { displayName: `Added Robots.txt to prevent indexing` })
   ].filter(Boolean)
 }
 

@@ -1,12 +1,26 @@
 .control {
+  position: relative;
   display: block;
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
   
   &__label {
-    color: var(--text-secondary);
-    font-size: var(--fs-default);
-
     &--bold {
       font-family: var(--ff-alt);
+    }
+
+    &--floating {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%;
+      text-align: center;
+      will-change: opacity, visibility;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: none;
+      transition: opacity ease-out-quint 0.3s, visibility ease-out-quint 0.3s;
     }
   }
 
@@ -32,11 +46,27 @@
   }
 
   &__input {
-    @extend .reset-input;  
+    @extend .reset-input;
+
+    width: 100%;
+    height: 2.85rem;
+
+    text-align:center;
+    background-color: var(--bg-light);
+    border: 1px solid transparent;
+    border-radius: 1.425rem;
+
+    &:focus {
+      & + .control__label--floating {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   }
 
   &--select {
     .control__label {
+      font-size: var(--fs-default);
       color: var(--text-black);
     }
 
@@ -44,10 +74,8 @@
       width: 100%;
       padding: 0.4rem 2rem 0;
       height: 2.75rem;
-      color: var(--text-secondary);
-      font-size: var(--fs-sm);
       border: 1px solid var(--bc-default);
-      background-color: var(--bg-light);
+      background-color: var(--bg-lighter);
       border-radius: 0.25rem;
       -webkit-appearance: none;
     }
@@ -92,6 +120,7 @@
       font-size: var(--fs-xl);
       line-height: 2.4rem;
       color: var(--text-black);
+      background-color: var(--bg-white);
       text-align: center;
       border: 2px solid var(--bc-default);
       border-radius: 50%;
@@ -105,6 +134,69 @@
       & {
         -moz-appearance: textfield;
       }
+    }
+  }
+
+  &--checkbox {
+    display: flex;
+    align-items: flex-start;
+
+    .control__input {
+      @extend .visually-hidden;
+
+      &:focus {
+        & + .control__check > .control__check-icon {
+          opacity: 0.5;
+          color: var(--accent);
+        }
+      }
+
+      &:checked {
+        & + .control__check > .control__check-icon {
+          opacity: 1;
+          color: var(--accent);
+        }
+      }
+    }
+
+    .control__check {
+      display: inline-block;
+      line-height: 0;
+      margin-right: 0.6rem;
+
+      &-icon {
+        margin-top: 0.15rem;
+        line-height: 0;
+        opacity: 0.15;
+        transition: opacity ease-out-quint 0.3s, color ease-out-quint 0.3s;
+      }
+    }
+
+    &:hover {
+      .control__label--floating {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .control__check-icon {
+        opacity: 0.5;
+        color: var(--accent);
+      }
+    }
+
+    .control__label {
+      font-size: 0.7rem;
+    }
+  }
+
+  &--error {
+    .control__input {
+      border-color: var(--danger);
+    }
+
+    .control__check-icon {
+      color: var(--danger);
+      opacity: 0.5;
     }
   }
 

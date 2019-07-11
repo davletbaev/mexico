@@ -19,16 +19,15 @@ body {
   font-family: var(--ff-default);
 
   &.js-modal-open {
+    overflow: hidden;
+		-webkit-overflow-scrolling: touch
+  }
+
+  &.ios-hack {
 		position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    overflow: hidden;
-		-webkit-overflow-scrolling: touch
   }
-}
-
-[v-cloak] {
-  display: none;
 }

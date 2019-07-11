@@ -2,7 +2,7 @@
   <header :class="{'js-scrolling': isScrolling }"  class="header" >
     <div class="container">
       <nav class="header__nav nav">
-        <a href="/" class="nav__logo logo">
+        <a href="#top" class="nav__logo logo" data-smooth>
           {{ icon('logo-colored', 'logo__img') }}
         </a>
         <div class="nav__toggle" v-cloak v-if="screenWidth < 1024">
@@ -16,25 +16,22 @@
           <div :class="{ 'js-active': isNavVisible }" class="nav__mobile" v-cloak v-if="isNavVisible || screenWidth >= 1024">
             <ul class="nav__menu menu">
               <li class="menu__item">
-                <a href="#program" class="menu__link">Программа</a>
+                <a href="#program" class="menu__link" data-smooth>Программа</a>
               </li>
               <li class="menu__item">
-                <a href="#team" class="menu__link">Команда</a>
+                <a href="#team" class="menu__link" data-smooth>Команда</a>
               </li>
               <li class="menu__item">
-                <a href="#pricing" class="menu__link">Цены</a>
+                <a href="#pricing" class="menu__link" data-smooth>Цены и даты</a>
               </li>
               <li class="menu__item">
-                <a href="#dates" class="menu__link">Даты</a>
+                <a href="#feedback" class="menu__link" data-smooth>Отзывы</a>
               </li>
               <li class="menu__item">
-                <a href="#feedback" class="menu__link">Отзывы</a>
+                <a href="#faq" class="menu__link" data-smooth>FAQ</a>
               </li>
               <li class="menu__item">
-                <a href="#faq" class="menu__link">FAQ</a>
-              </li>
-              <li class="menu__item">
-                <a href="#contacts" class="menu__link">Контакты</a>
+                <a href="#contacts" class="menu__link" data-smooth>Контакты</a>
               </li>
             </ul>
 

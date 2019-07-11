@@ -1,17 +1,17 @@
-<section class="section program">
+<section class="section program" id="program">
   <div class="container">
     <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center heading--has-action">
       Итак, наша сюрреалистическая программа
 
       <div class="section__action">
-        <a href="#" target="_blank" rel="download" class="section__action-link">
+        <a href="#" class="section__action-link" @click.prevent="toggleModal('form')">
           {{ icon('cloud-download', 'section__action-icon') }}
           <span>Скачать полную программу тура по дням</span>
         </a>
       </div>
     </h2>
 
-    <tabs-component inline-template>
+    <tabs-component :swiper-options="swiperOptions" inline-template>
       <div class="program__tabs tabs">
         <div class="tabs__nav tabs-nav">
           <ul class="tabs-nav__list">
@@ -41,26 +41,76 @@
                 class="tabs-nav__link"
                 :class="{ 'js-active': tabPaneActive == 4 }"
                 @click="showPane(4, $event)"
-              >Восстановит силы</a>
+              >Восстановит наши силы</a>
             </li>
           </ul>
         </div>
 
         <div class="tabs__content">
-          <div class="tab-pane panel" id="see" v-if="tabPaneActive == 1">
-            <div class="tab-pane__pictures tab-pane__pictures--lg">
-              <div class="tab-pane__picture-wrap">
-                {{ picture('Мехико', 'tab-pane__img', 'img/program/mexico', 'jpg') }}
-              </div>
-            </div>
+          <div class="tab-pane" id="see" v-if="tabPaneActive == 1">
+            <swiper :options="swiperOptions">
+              <button class="swiper-button-prev" slot="button-prev">
+                {{ icon('prev', "swiper-button__icon") }}
+              </button>
+              <div class="swiper-pagination"  slot="pagination"></div>
+              <button class="swiper-button-next" slot="button-next">
+                {{ icon('next', "swiper-button__icon") }}
+              </button>
 
-            <div class="tab-pane__content">
-              <h4 class="heading heading--h4">Мехико</h4>
+              <swiper-slide>
+                <div class="tab-pane__inner panel">
+                  <div class="tab-pane__pictures tab-pane__pictures--lg">
+                    <div class="tab-pane__picture-wrap">
+                      {{ picture('Мехико', 'tab-pane__img', 'img/program/mexico', 'jpg') }}
+                    </div>
+                  </div>
 
-              <p>
-                Горячее сердце Мексики! Бывшая столица кровожадных ацтеков, превращенная испанцами в католическую колониальную мекку Нового Света. Более 25 миллионов жителей, горные пейзажи, небоскребы, старинные здания и древние руины… Огромный, кипучий, поражающий разнообразием архитектуры и наполненный сумасшедшей энергетикой Mexico City представляет собой микс эпох, культур и народов.   Это стоит пережить!
-              </p>
-            </div>
+                  <div class="tab-pane__content">
+                    <h4 class="heading heading--h4">Мехико</h4>
+
+                    <p>
+                      Горячее сердце Мексики! Бывшая столица кровожадных ацтеков, превращенная испанцами в католическую колониальную мекку Нового Света. Более 25 миллионов жителей, горные пейзажи, небоскребы, старинные здания и древние руины… Огромный, кипучий, поражающий разнообразием архитектуры и наполненный сумасшедшей энергетикой Mexico City представляет собой микс эпох, культур и народов.   Это стоит пережить!
+                    </p>
+                  </div>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide>
+                <div class="tab-pane__inner panel">
+                  <div class="tab-pane__pictures tab-pane__pictures--lg">
+                    <div class="tab-pane__picture-wrap">
+                      {{ picture('Мехико', 'tab-pane__img', 'img/program/mexico', 'jpg') }}
+                    </div>
+                  </div>
+
+                  <div class="tab-pane__content">
+                    <h4 class="heading heading--h4">Мехико</h4>
+
+                    <p>
+                      Горячее сердце Мексики! Бывшая столица кровожадных ацтеков, превращенная испанцами в католическую колониальную мекку Нового Света. Более 25 миллионов жителей, горные пейзажи, небоскребы, старинные здания и древние руины… Огромный, кипучий, поражающий разнообразием архитектуры и наполненный сумасшедшей энергетикой Mexico City представляет собой микс эпох, культур и народов.   Это стоит пережить!
+                    </p>
+                  </div>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide>
+                <div class="tab-pane__inner panel">
+                  <div class="tab-pane__pictures tab-pane__pictures--lg">
+                    <div class="tab-pane__picture-wrap">
+                      {{ picture('Мехико', 'tab-pane__img', 'img/program/mexico', 'jpg') }}
+                    </div>
+                  </div>
+
+                  <div class="tab-pane__content">
+                    <h4 class="heading heading--h4">Мехико</h4>
+
+                    <p>
+                      Горячее сердце Мексики! Бывшая столица кровожадных ацтеков, превращенная испанцами в католическую колониальную мекку Нового Света. Более 25 миллионов жителей, горные пейзажи, небоскребы, старинные здания и древние руины… Огромный, кипучий, поражающий разнообразием архитектуры и наполненный сумасшедшей энергетикой Mexico City представляет собой микс эпох, культур и народов.   Это стоит пережить!
+                    </p>
+                  </div>
+                </div>
+              </swiper-slide>
+            </swiper>
           </div>
 
           <div class="tab-pane panel" v-cloak id="feel" v-if="tabPaneActive == 2">

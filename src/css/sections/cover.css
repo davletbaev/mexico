@@ -107,7 +107,7 @@
     &__features {
       display: flex;
       margin-top: 3rem;
-      padding: 1.5rem 0 1rem;
+      padding: 0.75rem 0 0.75rem;
 
       .feature {
         flex: 0 0 33%;

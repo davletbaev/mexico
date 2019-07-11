@@ -118,7 +118,13 @@
   }
 
   @media(--laptop) {
-    display: flex;
+    &__inner {
+      display: flex;
+
+      &.panel > .tab-pane__content {
+        padding: 1.5rem 2rem;
+      }
+    }
 
     &__pictures {
       display: grid;
@@ -169,10 +175,6 @@
       .media__desc {
         margin-top: 0.4em;
       }
-    }
-
-    &.panel > .tab-pane__content {
-      padding: 1.5rem 2rem;
     }
   }
 

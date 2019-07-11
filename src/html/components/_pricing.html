@@ -1,4 +1,4 @@
-<section class="section pricing">
+<section class="section pricing" id="pricing">
   <div class="container">
     <h2 class="section__heading heading heading--h3 heading--uppercase heading--text-center heading--has-action">
       Стоимость энерджи-тура
@@ -6,63 +6,65 @@
 
     <div class="pricing__grid">
       <div class="pricing__form panel">
-        <form action="/" class="form form--sm">
-          <div class="form__group">
-            <label class="control control--select">
-              <span class="control__label control__label--bold">Выберете дату</span>
-              <div class="control__wrap">
-                {{ icon('calendar', 'control__icon') }}
-                <select class="control__input" name="date" id="date">
-                  <option value="09.11.19-23.11.19" selected>09 ноября - 23 ноября 2019</option>
-                  <option value="27.11.19-11.12.19" selected>27 ноября - 11 декабря 2019</option>
-                  <option value="15.12.19-29.12.19" selected>15 декабря - 29 декабря 2019</option>
-                </select>
-                {{ icon('arrow-bottom', 'control__arrow') }}
-              </div>
-            </label>
-          </div>
-
-          <div class="form__group form__group--border-b">
-            <span class="form__param">9/15 мест осталось</span>
-            <span class="form__param">14 дней</span>
-          </div>
-
-          <div class="form__group form__group--border-b">
-            <div class="price">
-              <strong class="price__current">$ 4100</strong>
-              <del class="price__prev">$13 000</del>
+        <form-pricing inline-template @form-submit="handlePricingForm">
+          <form action="/" class="form form--pricing">
+            <div class="form__group">
+              <label class="control control--select">
+                <span class="control__label control__label--bold">Выберете дату</span>
+                <div class="control__wrap">
+                  {{ icon('calendar', 'control__icon') }}
+                  <select class="control__input" name="tours" id="tours" @change="checkSeats" v-model="selected">
+                    <option v-for="tour in tours" :value="tour.id">
+                      {{ "{{ tour.date }}" | safe }}
+                    </option>
+                  </select>
+                  {{ icon('arrow-bottom', 'control__arrow') }}
+                </div>
+              </label>
             </div>
-          </div>
 
-          <div class="form__group form__group--padding-lg">
-            <label class="control control--numeric">
-              <span class="control__label">Кол-во мест:</span>
-              <div class="control__wrap">
-                <button type="button" class="control__btn control__btn--minus" aria-label="Уменьшить">
-                  -
-                </button>
+            <div class="form__group form__group--border-b">
+              <span class="form__param">{{ "{{ selectedTour.seatsAvailable }}" | safe }}/{{ "{{ selectedTour.seatsTotal }}" | safe }} мест осталось</span>
+              <span class="form__param">{{ "{{ tourDuration }}" | safe }}</span>
+            </div>
 
-                <input class="control__input" type="number" name="seats" id="seats" value="1" min="1" max="6">
-
-                <button type="button" class="control__btn control__btn--plus" aria-label="Увеличить">
-                  +
-                </button>
+            <div class="form__group form__group--border-b">
+              <div class="price">
+                <strong class="price__current">$ {{ "{{ selectedTour.priceCurrent }}" | safe }}</strong>
+                <del class="price__prev">${{ "{{ selectedTour.pricePrev }}" | safe }}</del>
               </div>
-            </label>
-          </div>
+            </div>
 
-          <div class="form__group">
-            <p class="form__notice">
-              Для бронирования тура достаточно 2000$
-            </p>
-          </div>
+            <div class="form__group form__group--padding-lg">
+              <label class="control control--numeric">
+                <span class="control__label">Кол-во мест:</span>
+                <div class="control__wrap">
+                  <button type="button" class="control__btn control__btn--minus" @click="subtractSeats" aria-label="Уменьшить">
+                    -
+                  </button>
 
-          <div class="form__group">
-            <button class="button button--primary button--uppercase button--bold button--block">
-              Хочу в Мексику
-            </button>
-          </div>
-        </form>
+                  <input class="control__input" type="number" name="seats" id="seats" v-model="seats" min="1" max="6">
+
+                  <button type="button" class="control__btn control__btn--plus" @click="addSeats" aria-label="Увеличить">
+                    +
+                  </button>
+                </div>
+              </label>
+            </div>
+
+            <div class="form__group">
+              <p class="form__notice">
+                Для бронирования тура достаточно 2000$
+              </p>
+            </div>
+
+            <div class="form__group">
+              <button class="button button--primary button--uppercase button--bold button--block" @click.prevent="formSubmit">
+                Хочу в Мексику
+              </button>
+            </div>
+          </form>
+        </form-pricing>
       </div>
 
       <tabs-component inline-template>

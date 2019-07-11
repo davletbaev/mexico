@@ -1,58 +1,91 @@
-<modal-component v-if="formShow" inline-template>
-  <div class="modal modal--form">
+<transition name="fade">
+  <div v-if="modals.form" class="modal modal--form" v-cloak @click.self="toggleModal('form')" role="dialog">
     <div class="modal__inner">
-      <button class="modal__close">
+      <button class="modal__close" @click="toggleModal('form')">
         {{ icon('cross', 'modal__close-icon') }}
       </button>
       <div class="modal__content">
-        <h3 class="heading heading--h3 heading--text-center">Заполни форму для получения презентации по туру</h3>
 
-        <contact-form>
-          <form action="/" class="form form--lg">
-            <div class="form__group">
-              <label class="control">
-                <input type="text" class="control__input" name="name" required>
-                <div class="control__label">Имя</div>
-              </label>
+        <form-request :selected-tour="selectedTour" inline-template>
+          <form action="/mail.php" class="form form--request" ref="form">
+            <h3 class="modal__heading heading heading--h4 heading--text-center">Получи 5 советов по восстановлению жизненных сил, находясь в путешествии</h3>
+            
+            <div class="form__main" v-if="!success && !error">
+            
+              <div class="form__group">
+                <label class="control" :class="{ 'control--error': validation.name === false }">
+                  <input type="text" class="control__input" name="name" @blur="validate($event)" v-model="name" required>
+                  <transition name="fade">
+                    <div class="control__label control__label--floating" v-show="!name">Имя</div>
+                  </transition>
+                </label>
+              </div>
+
+              <div class="form__group">
+                <label class="control" :class="{ 'control--error': validation.phone === false }">
+                  <input type="tel" class="control__input" name="phone" @blur="validate($event)" v-model="phone" ref="phone" required>
+                  <transition name="fade">
+                    <div class="control__label control__label--floating" v-show="!phone">Телефон/WhatsApp</div>
+                  </transition>
+                </label>
+              </div>
+
+              <div class="form__group">
+                <label class="control" :class="{ 'control--error': validation.contact === false }">
+                  <input type="text" class="control__input" name="contact" @blur="validate($event)" v-model="contact" required>
+                  <transition name="fade">
+                    <div class="control__label control__label--floating" v-show="!contact">E-mail или ID в соц. сетях</div>
+                  </transition>
+                </label>
+              </div>
+
+              <div class="form__group">
+                <label class="control" :class="{ 'control--error': validation.city === false }">
+                  <input type="text" class="control__input" name="city" @blur="validate($event)" v-model="city" required>
+                  <transition name="fade">
+                    <div class="control__label control__label--floating" v-show="!city">Город</div>
+                  </transition>
+                </label>
+              </div>
+
+              <div class="form__group form__group--agree">
+                <label class="control control--checkbox" :class="{ 'control--error': validation.agree === false }">
+                  <input type="checkbox" name="agree" class="control__input" @change="validate($event)" value="true" v-model="agree" checked required>
+                  <span class="control__check">
+                    {{ icon('checked', 'control__check-icon') }}
+                  </span>
+                  <span class="control__label">Я даю свое согласие на обработку персональных данных и соглашаюсь с условиями и политикой конфиденциальности</span>
+                </label>
+              </div>
+
+              <div class="form__group">
+                <button class="button button--primary button--uppercase button--bold button--block" type="submit" @click.prevent="submitForm">Прислать программу</button>
+              </div>
             </div>
 
-            <div class="form__group">
-              <label class="control">
-                <input type="text" class="control__input" name="name" required>
-                <div class="control__label">Телефон/WhatsApp</div>
-              </label>
+            <div class="form__success" v-if="success">
+              <div class="form__group">
+                <p class="heading heading--h5 heading--text-center text-success">Ваша заявка успешно отправлена!</p>
+                <p>Вы получите презентацию в ближайшее время. Не забудьте проверить почту!</p>
+              </div>
+
+              <div class="form__group">
+                <button class="button button--primary button--uppercase button--bold button--block" type="submit" @click.prevent="success = false">Заполнить еще раз</button>
+              </div>
             </div>
 
-            <div class="form__group">
-              <label class="control">
-                <input type="text" class="control__input" name="name" required>
-                <div class="control__label">E-mail или ID в соц. сетях</div>
-              </label>
-            </div>
-
-            <div class="form__group">
-              <label class="control">
-                <input type="text" class="control__input" name="city" required>
-                <div class="control__label">Город</div>
-              </label>
-            </div>
-
-            <div class="form__group">
-              <label class="control control--checkbox">
-                <input type="checkbox" name="agree" class="control__input" required>
-                <span class="control__check">
-                  {{ icon('checked', 'control__check-icon') }}
-                </span>
-                <span class="control__label">Я даю свое согласие на обработку персональных данных и соглашаюсь с условиями и политикой конфиденциальности</span>
-              </label>
-            </div>
-
-            <div class="form__group">
-              <button class="button--primary button--uppercase button--bold button--block" type="submit">Прислать программу</button>
+            <div class="form__danger" v-if="error">
+              <div class="form__group">
+                <p class="heading heading--h5 heading--text-center text-danger">Во время отправки произошла ошибка!</p>
+                <p>Повторите попытку позже.</p>
+              </div>
+              <div class="form__group">
+                <button class="button button--primary button--uppercase button--bold button--block" type="submit" @click.prevent="error = false">Попробовать еще раз!</button>
+              </div>
             </div>
           </form>
-        </contact-form>
+        </form-request>
       </div>
     </div>
   </div>
-</modal-component>
+</transition>

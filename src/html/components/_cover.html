@@ -1,4 +1,4 @@
-<section class="cover">
+<section class="cover" id="top">
   <div class="container">
     <div class="cover__bg">
       <div class="cover__bg-wrap" v-if="screenWidth >= 768">
@@ -15,11 +15,11 @@
       <h1 class="cover__heading heading heading--h1">Авторский энерджи-тур в Мексику</h1>
 
       <div class="cover__desc">
-        Повысь жизненный тонус на <span class="label label--bold">110%</span> за <span class="label label--bold">14<span> дней
+        Повысь жизненный тонус на <span class="label label--bold">110%</span> за <span class="label label--bold">14</span> дней в улетном путешествии
       </div>
 
       <div class="cover__video">
-        <button class="toggle toggle--video" aria-label="Посмотреть видео" @click="showVideo = true">
+        <button class="toggle toggle--video" aria-label="Посмотреть видео" @click="toggleModal('video')">
           <div class="toggle__img-wrap">
             {{ picture('Видео', 'toggle__img', 'img/cover/play-btn', 'jpg') }}
           </div>
@@ -27,7 +27,7 @@
         </button>
       </div>
 
-      <a href="#recreation" class="cover__button button button--primary button--uppercase button--bold">
+      <a href="#energy" class="cover__button button button--primary button--uppercase button--bold" data-smooth>
         Как возобновить энергию
       </a>
     </div>
@@ -56,7 +56,7 @@
         {{ icon('directions', 'text-block__pic-icon') }}
       </div>
 
-      <p class="text-block__text">Если не отдыхать, то организм будет использоваться на износ.</p>
+      <p class="text-block__text" id="energy">Если не отдыхать, то организм будет использоваться на износ.</p>
 
       <p class="text-block__text">Если за короткий отдых подвергнуть себя резкому удару солнечных лучей, разлагающих напитков или сбить режим сна, то эффект также будет губительным.</p>
 

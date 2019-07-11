@@ -4,6 +4,7 @@ export default {
       tabPaneActive: 1
     }
   },
+  props: ['swiperOptions'],
   methods: {
     showPane(id, event) {
       event.preventDefault()

@@ -18,6 +18,6 @@ export default {
   },
   props: ['screen-width'],
   mounted() {
-    window.addEventListener('scroll', debounce(this.handleScroll, 250), { passive: true })
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
   }
 }

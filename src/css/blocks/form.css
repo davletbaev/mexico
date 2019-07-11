@@ -31,7 +31,13 @@
     text-align: center;
   }
 
-  &--sm {
+  &__success,
+  &__danger {
+    font-size: var(--fs-xs);
+    text-align: center;
+  }
+
+  &--pricing {
     .form__group {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
@@ -43,6 +49,21 @@
 
       &--border-b {
         border-bottom: 1px solid var(--bc-default);
+      }
+    }
+  }
+
+  &--request {
+    margin: 0 auto;
+    max-width: 22rem;
+
+    .form__group {
+      & + .form__group {
+        margin-top: 0.85rem;
+      }
+
+      &--agree {
+        padding: 0.5rem 0;
       }
     }
   }
