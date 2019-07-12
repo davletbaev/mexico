@@ -1,4 +1,5 @@
-import { requestAnimationFrame } from '../utils'
+// import { requestAnimationFrame } from '../utils'
+const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
 export default {
   data() {
@@ -8,8 +9,12 @@ export default {
   },
   methods: {
     collapseBlock() {
-      const fullHeight = this.$refs.collapse.scrollHeight
+      this.isCollapsed = !this.isCollapsed
+
+      const fullHeight = this.$refs.collapse.firstElementChild.scrollHeight 
       const duration = 10 * Math.pow(Math.log(fullHeight), 2)
+
+      debugger;
 
       const animationKeyframes = [
         { height: '10em' },
@@ -22,8 +27,6 @@ export default {
         fill: 'both',
         easing: ['cubic-bezier(0.68, -0.55, 0.265, 1.55)']
       }
-
-      this.isCollapsed = !this.isCollapsed
 
       const delay = this.isCollapsed ? 0 : 300
       setTimeout(() => {

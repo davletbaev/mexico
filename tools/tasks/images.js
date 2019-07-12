@@ -19,7 +19,6 @@ const buildImages = (mode) => (done) => {
         width: 150,
         height: 150,
         withoutEnlargement: false,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@1x',
@@ -36,7 +35,6 @@ const buildImages = (mode) => (done) => {
         width: 225,
         height: 225,
         withoutEnlargement: false,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@1.5x',
@@ -53,7 +51,6 @@ const buildImages = (mode) => (done) => {
         width: 300,
         height: 300,
         withoutEnlargement: false,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@2x',
@@ -70,10 +67,9 @@ const buildImages = (mode) => (done) => {
         width: 450,
         height: 450,
         withoutEnlargement: false,
-        progressive: true,
         format: 'jpg',
         rename: {
-          suffix: '@2.5x'
+          suffix: '@3x'
         }
       },{
         width: 450,
@@ -81,54 +77,70 @@ const buildImages = (mode) => (done) => {
         withoutEnlargement: false,
         format: 'webp',
         rename: {
-          suffix: '@2.5x'
+          suffix: '@3x'
         }
       }],
       '**/{live,program}/*.jpg': [
       {
         width: 460,
-        progressive: true,
         format: 'jpg',
+        withoutEnlargement: false,
         rename: {
           suffix: '@1x',
         }
       },{
         width: 460,
         format: 'webp',
+        withoutEnlargement: false,
         rename: {
           suffix: '@1x'
         }
       },{
         width: 720,
-        progressive: true,
         format: 'jpg',
+        withoutEnlargement: false,
         rename: {
           suffix: '@1.5x',
         }
       },{
         width: 720,
         format: 'webp',
+        withoutEnlargement: false,
         rename: {
           suffix: '@1.5x'
         }
       },{
         width: 920,
-        progressive: true,
         format: 'jpg',
+        withoutEnlargement: false,
         rename: {
           suffix: '@2x'
         }
       },{
         width: 920,
         format: 'webp',
+        withoutEnlargement: false,
         rename: {
           suffix: '@2x'
+        }
+      },{
+        width: 1380,
+        format: 'jpg',
+        withoutEnlargement: false,
+        rename: {
+          suffix: '@3x'
+        }
+      },{
+        width: 1380,
+        format: 'webp',
+        withoutEnlargement: false,
+        rename: {
+          suffix: '@3x'
         }
       }],
       '**/play-btn.jpg': [{
         width: 84,
         height: 84,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@1x',
@@ -143,7 +155,6 @@ const buildImages = (mode) => (done) => {
       },{
         width: 126,
         height: 126,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@1.5x'
@@ -158,7 +169,6 @@ const buildImages = (mode) => (done) => {
       },{
         width: 168,
         height: 168,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@2x'
@@ -173,7 +183,6 @@ const buildImages = (mode) => (done) => {
       },{
         width: 252,
         height: 252,
-        progressive: true,
         format: 'jpg',
         rename: {
           suffix: '@3x'
@@ -188,7 +197,6 @@ const buildImages = (mode) => (done) => {
       }],
       '**/illustration1.png': [{
         width: 568,
-        progressive: true,
         rename: {
           suffix: '@1x',
           ext: 'png'
@@ -201,7 +209,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 852,
-        progressive: true,
         rename: {
           suffix: '@1.5x'
         }
@@ -213,7 +220,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1136,
-        progressive: true,
         rename: {
           suffix: '@2x'
         }
@@ -223,10 +229,20 @@ const buildImages = (mode) => (done) => {
         rename: {
           suffix: '@2x'
         }
+      },{
+        width: 1704,
+        rename: {
+          suffix: '@3x'
+        }
+      },{
+        width: 1704,
+        format: 'webp',
+        rename: {
+          suffix: '@3x'
+        }
       }],
       '**/illustration2.png': [{
         width: 607,
-        progressive: true,
         rename: {
           suffix: '@1x'
         }
@@ -238,7 +254,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 910,
-        progressive: true,
         rename: {
           suffix: '@1.5x'
         }
@@ -250,7 +265,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1214,
-        progressive: true,
         rename: {
           suffix: '@2x'
         }
@@ -262,7 +276,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1821,
-        progressive: true,
         rename: {
           suffix: '@3x'
         }
@@ -274,7 +287,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 2428,
-        progressive: true,
         rename: {
           suffix: '@4x'
         }
@@ -287,7 +299,6 @@ const buildImages = (mode) => (done) => {
       }],
       '**/illustration3.png': [{
         width: 607,
-        progressive: true,
         rename: {
           suffix: '@1x'
         }
@@ -299,7 +310,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 910,
-        progressive: true,
         rename: {
           suffix: '@1.5x'
         }
@@ -311,7 +321,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1214,
-        progressive: true,
         rename: {
           suffix: '@2x'
         }
@@ -323,7 +332,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1821,
-        progressive: true,
         rename: {
           suffix: '@3x'
         }
@@ -335,7 +343,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 2428,
-        progressive: true,
         rename: {
           suffix: '@4x'
         }
@@ -348,7 +355,6 @@ const buildImages = (mode) => (done) => {
       }],
       '**/illustration4.png': [{
         width: 600,
-        progressive: true,
         rename: {
           suffix: '@1x'
         }
@@ -360,7 +366,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 900,
-        progressive: true,
         rename: {
           suffix: '@1.5x'
         }
@@ -372,7 +377,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1200,
-        progressive: true,
         rename: {
           suffix: '@2x',
           ext: 'png'
@@ -386,7 +390,6 @@ const buildImages = (mode) => (done) => {
       }],
       '**/illustration5.png': [{
         width: 548,
-        progressive: true,
         rename: {
           suffix: '@1x'
         }
@@ -398,7 +401,6 @@ const buildImages = (mode) => (done) => {
         }
       },{
         width: 1096,
-        progressive: true,
         rename: {
           suffix: '@2x'
         }
@@ -414,22 +416,22 @@ const buildImages = (mode) => (done) => {
       skipOnEnlargement: true,
       errorOnEnlargement: false
     }),
-    ...((mode === 'production') ? [
-      imagemin([
-        imageminWebp({
-          quality: 80,
-          method: 4
-        }),
-        imageminMozjpeg({
-          quality: 80,
-          progressive: true
-        }),
-        imageminOptiPng({
-          optimizationLevel: 2,
-          paletteReduction: true
-        }),
-      ])
-    ] : []),
+    // ...((mode === 'production') ? [
+    //   imagemin([
+    //     imageminWebp({
+    //       quality: 80,
+    //       method: 4
+    //     }),
+    //     imageminMozjpeg({
+    //       quality: 80,
+    //       progressive: true
+    //     }),
+    //     imageminOptiPng({
+    //       optimizationLevel: 2,
+    //       paletteReduction: true
+    //     }),
+    //   ])
+    // ] : []),
     gulp.dest(paths.dist.images)
   ], done)
 }

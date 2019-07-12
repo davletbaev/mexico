@@ -1,14 +1,17 @@
 .team,
 .feedback {
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -1.5rem -2.5rem;
 
-    & > .article {
-      flex: 0 0 50%;
-      padding: 0 1.5rem;
-      margin-bottom: 2.5rem;
+  @media(--tablet) {
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1.5rem -2.5rem;
+
+      & > .article {
+        flex: 0 0 50%;
+        padding: 0 1.5rem;
+        margin-bottom: 2.5rem;
+      }
     }
   }
 

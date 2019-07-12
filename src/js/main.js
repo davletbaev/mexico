@@ -21,7 +21,7 @@ const vm = new Vue({
       video: false
     },
     swiperOptions: {
-      spaceBetween: 30,
+      spaceBetween: 100,
       speed: 500,
       pagination: {
         el: '.swiper-pagination',
@@ -30,7 +30,8 @@ const vm = new Vue({
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      allowTouchMove: false
     }
   },
   methods: {

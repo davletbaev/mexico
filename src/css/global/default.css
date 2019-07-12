@@ -31,3 +31,8 @@ body {
     right: 0;
   }
 }
+
+a[href^=tel] {
+  text-decoration:inherit;
+  color: inherit;
+}

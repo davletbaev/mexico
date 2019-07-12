@@ -15,6 +15,7 @@
 @import "vendor/swiper";
 
 /* Blocks styles */
+@import 'blocks/panel';
 @import 'blocks/accordion';
 @import 'blocks/article';
 @import 'blocks/button';
@@ -32,7 +33,6 @@
 @import 'blocks/menu';
 @import 'blocks/modal';
 @import 'blocks/nav';
-@import 'blocks/panel';
 @import 'blocks/price';
 @import 'blocks/socials';
 @import 'blocks/tabs';

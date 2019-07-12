@@ -33,6 +33,7 @@
     &__form {
       margin-left: 3rem;
       order: 2;
+      padding: 1.25rem 1.25rem 1.5rem;
       flex: 0 0 auto;
     }
 

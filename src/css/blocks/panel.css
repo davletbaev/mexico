@@ -1,7 +1,14 @@
 @media(--tablet) {
   .panel {
     box-shadow: var(--bs-default);
+    padding: 1rem;
     border-radius: 0.4rem;
     overflow: hidden;
+  }
+}
+
+@media(--laptop) {
+  .panel {
+    padding: 0;
   }
 }

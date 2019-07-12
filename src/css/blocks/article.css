@@ -47,8 +47,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden; 
 
+    line-height: 1.7;
+
     &.js-collapse {
       display: block;
+
+      .article__content-inner {
+        overflow: scroll;
+      }
     }
   }
 
@@ -56,7 +62,7 @@
     margin-top: 0.75rem;
   }
 
-  @media(--laptop) {
+  @media(--tablet) {
     & + .article {
       margin-top: 0;
     }

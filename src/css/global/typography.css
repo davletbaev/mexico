@@ -71,24 +71,34 @@ p {
 }
 
 .list {
-  @extend .reset-list;
 
-  & > li {
-    position: relative;
-    padding-left: 1.2rem;
+  &--ul {
+    @extend .reset-list;
+    & > li {
+      position: relative;
+      padding-left: 1.2rem;
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 1em;
-      left: 0;
-      transform: translateY(-50%);
-      display: block;
-      width: 6px;
-      height: 6px;
-      color: inherit;
-      background-color: currentColor;
-      border-radius: 50%;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1em;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+        width: 6px;
+        height: 6px;
+        color: inherit;
+        background-color: currentColor;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &--ol {
+    padding-left: 0.9rem;
+
+    & > li {
+      padding-left: 0.4rem;
     }
   }
 }

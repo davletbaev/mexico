@@ -8,7 +8,7 @@
 
         <form-request :selected-tour="selectedTour" inline-template>
           <form action="/mail.php" class="form form--request" ref="form">
-            <h3 class="modal__heading heading heading--h4 heading--text-center">Получи 5 советов по восстановлению жизненных сил, находясь в путешествии</h3>
+            <h3 v-if="!success && !error" class="modal__heading heading heading--h4 heading--text-center">Получи 5 советов по восстановлению жизненных сил, находясь в путешествии</h3>
             
             <div class="form__main" v-if="!success && !error">
             

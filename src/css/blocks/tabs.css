@@ -95,7 +95,8 @@
     margin-top: 2rem;
 
     & > .heading {
-      font-size: var(--fs-h3);
+      font-size: var(--fs-h4);
+      line-height: 1.5;
     }
 
     & > p {
@@ -115,6 +116,10 @@
 
   &__advice {
     margin-top: 2rem;
+    
+    .heading {
+      line-height: 2;
+    }
   }
 
   @media(--laptop) {

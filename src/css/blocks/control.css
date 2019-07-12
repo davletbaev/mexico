@@ -49,7 +49,7 @@
     @extend .reset-input;
 
     width: 100%;
-    height: 2.85rem;
+    height: 2rem;
 
     text-align:center;
     background-color: var(--bg-light);
@@ -61,6 +61,10 @@
         opacity: 0;
         visibility: hidden;
       }
+    }
+
+    @media(--tablet) {
+      height: 2.85rem;
     }
   }
 
@@ -103,6 +107,7 @@
       padding-top: 0.15rem;
       transform: translateY(-50%);
       font-size: var(--fs-xxxl);
+      -webkit-appearance: none;
 
       &--minus {
         left: 0;
@@ -110,6 +115,10 @@
 
       &--plus {
         right: 0;
+      }
+
+      &:active {
+       color: inherit; 
       }
     }
 
@@ -165,7 +174,6 @@
       margin-right: 0.6rem;
 
       &-icon {
-        margin-top: 0.15rem;
         line-height: 0;
         opacity: 0.15;
         transition: opacity ease-out-quint 0.3s, color ease-out-quint 0.3s;
@@ -185,7 +193,9 @@
     }
 
     .control__label {
+      @extend .hyphens;
       font-size: 0.7rem;
+      line-height: 1.57;
     }
   }
 
@@ -203,13 +213,20 @@
   @media(--tablet) {
     &--select {
       .control__input {
-        padding: 0.3rem 2.5rem 0;
+        padding: 0.3rem 2rem 0 2.5rem;
       }
     }
 
     &--numeric {
       .control__input {
         padding-top: 0.15rem;
+      }
+    }
+
+    &--checkbox {
+      .control__label {
+        hyphens: none;
+        text-align: left;
       }
     }
 

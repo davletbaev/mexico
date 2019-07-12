@@ -17,8 +17,16 @@
   padding: 0;
   /* Fix of Webkit flickering */
   z-index: 1;
-  margin: -1.25rem;
-  padding: 5rem 1.25rem 1.25rem 1.25rem;
+  padding-top: 3.5rem;
+
+  @media(--tablet) {
+    padding-top: 2.5rem;
+  }
+
+  @media(--laptop) {
+    margin: -1.25rem -2rem -1.25rem;
+    padding: 5rem 2rem 2rem 1.25rem;
+  }
 }
 .swiper-container-no-flexbox .swiper-slide {
   float: left;
@@ -162,7 +170,7 @@
   @extend .reset-button;
 
   position: absolute;
-  top: 1.2rem;
+  top: 0;
 
   display: flex;
   align-items: center;
@@ -180,14 +188,26 @@
   &:focus {
     box-shadow: 0 6px 8px rgba(19, 23, 55, 0.07);
   }
+
+  @media(--laptop) {
+    top: 1.2rem;
+  }
 }
 
 .swiper-button-prev {
-  left: 1.25rem;
+  left: 0;
+
+  @media(--tablet) {
+    left: 1.25rem;
+  }
 }
 
 .swiper-button-next {
-  left: 7.45rem;
+  left: 6.2rem;
+
+  @media(--tablet) {
+    left: 7.45rem;
+  }
 }
 
 .swiper-button-prev.swiper-button-disabled,
@@ -221,8 +241,16 @@
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
-  top: 1.25rem;
-  left: 4.35rem;
+  top: 0;
+  left: 3.1rem;
+
+  @media(--tablet) {
+    left: 4.35rem;
+  }
+
+  @media(--laptop) {
+    top: 1.25rem;
+  }
 }
 /* Bullets */
 .swiper-pagination-bullets-dynamic {

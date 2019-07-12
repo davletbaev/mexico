@@ -15,15 +15,24 @@
     width: 100%;
     --btn-color: var(--white);
     --btn-bg: var(--bg-accent);
-    height: 3rem;
+    height: 2.4rem;
     line-height: 1;
-    padding: 1.1rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 1.5rem;
     transition: background-color ease-out-quint 0.3s;
 
     &:hover,
     &:focus {
       --btn-bg: var(--bg-accent-darker);
+    }
+
+    @media(--tablet) {
+      height: 2.8rem;
+      padding: 1.1rem 1rem;
+    }
+
+    @media(--laptop) {
+      padding: 1.1rem 2rem;
     }
   }
 

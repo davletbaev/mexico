@@ -4,35 +4,7 @@ export default Vue.component('form-pricing', {
   data() {
     return {
       selected: 1,
-      tours: [
-        {
-          id: 1,
-          date: '9 ноября 2019 - 23 ноября 2019',
-          seatsAvailable: 9,
-          seatsTotal: 15,
-          duration: 14,
-          priceCurrent: 4100,
-          pricePrev: 13000
-        },
-        {
-          id: 2,
-          date: '27 ноября 2019 - 11 декабря 2019',
-          seatsAvailable: 5,
-          seatsTotal: 14,
-          duration: 14,
-          priceCurrent: 3700,
-          pricePrev: 12500
-        },
-        {
-          id: 3,
-          date: '15 декабря 2019 - 20 декабря 2019',
-          seatsAvailable: 10,
-          seatsTotal: 18,
-          duration: 14,
-          priceCurrent: 5300,
-          pricePrev: 15800
-        }
-      ],
+      tours: TOURS,
       seats: 1,
     }
   },
@@ -79,7 +51,5 @@ export default Vue.component('form-pricing', {
         this.seats = this.selectedTour.seatsAvailable
       }
     }
-  },
-  mounted() {
   }
 })

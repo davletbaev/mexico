@@ -3,6 +3,10 @@
   text-align: center;
   overflow: hidden;
 
+  &__bg {
+    display: none;
+  }
+
   &:after,
   &:before {
     content: '';
@@ -78,6 +82,7 @@
     }
     
     &__bg {
+      display: block;
       position: absolute;
       top: 0;
       left: 40%;

@@ -36,15 +36,13 @@
             </div>
 
             <div class="form__group form__group--padding-lg">
-              <label class="control control--numeric">
+              <label for="seats" class="control control--numeric">
                 <span class="control__label">Кол-во мест:</span>
                 <div class="control__wrap">
                   <button type="button" class="control__btn control__btn--minus" @click="subtractSeats" aria-label="Уменьшить">
                     -
                   </button>
-
-                  <input class="control__input" type="number" name="seats" id="seats" v-model="seats" min="1" max="6">
-
+                  <input class="control__input" type="number" name="seats" id="seats" v-model="seats">
                   <button type="button" class="control__btn control__btn--plus" @click="addSeats" aria-label="Увеличить">
                     +
                   </button>
@@ -91,7 +89,7 @@
           <div class="tabs__content">
             <div class="tab-pane" key="included" id="included" v-if="tabPaneActive == 1">
               <div class="tab-pane__content">
-                <ul class="list">
+                <ul class="list list--ul">
                   <li>трансфер аэропорт-отель-аэропорт</li>
                   <li>размещение в отелях 3-5* по маршруту, 4* на море</li>
                   <li>питание: завтраки + все включено на море</li>
@@ -106,16 +104,13 @@
           
             <div class="tab-pane" key="notincluded" id="notincluded" v-if="tabPaneActive == 2">
               <div class="tab-pane__content">
-                <h5 class="heading heading--h5">Не включено:</h5>
-                <ul class="list">
-                  <li>трансфер аэропорт-отель-аэропорт</li>
-                  <li>размещение в отелях 3-5* по маршруту, 4* на море</li>
-                  <li>питание: завтраки + все включено на море</li>
-                  <li>вода 2 л/день</li>
-                  <li>все активности по программе</li>
-                  <li>профессиональный гид</li>
-                  <li>комфортабельный транспорт с профессиональным водителем:<br>
-                      Mercedes-Benz/Volkswagen</li>
+                <ul class="list list--ul">
+                  <li>авиаперелет</li>
+                  <li>виза</li>
+                  <li>страховка</li>
+                  <li>обеды/ужины по маршруту</li>
+                  <li>личные расходы</li>
+                  <li>одноместное проживание + 850$</li>
                 </ul>
               </div>
             </div>

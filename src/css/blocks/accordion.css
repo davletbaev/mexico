@@ -68,7 +68,42 @@
     overflow: hidden;
 
     &-inner {
-      padding: 0 1.25rem 1.25rem;
+      @extend .hyphens;
+      padding: 1.25rem 1.25rem 1.25rem;
+
+      & > .heading + p,
+      & > p + p,
+      & > ul + p,
+      & > ol + p,
+      & > ol + ul,
+      & > ul + ol {
+        margin-top: 1rem;
+      }
+
+      & > p + ul,
+      & > p + ol {
+        margin-top: 0.5rem;
+      }
+
+      & > .heading:not(:first-child) {
+        margin-top: 2rem;
+      }
+
+      & > .media {
+        margin-top: 2rem;
+      }
+    }
+
+    a {
+      color: var(--accent-darker);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color ease-out-quint 0.3s;
+
+      &:hover,
+      &:focus {
+        border-color: var(--accent);
+      }
     }
   }
 
