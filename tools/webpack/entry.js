@@ -1,3 +1,3 @@
 module.exports = {
-	bundle: ['./src/js/main.js'],
+	bundle: ['web-animations-js', './src/js/main.js'],
 }

@@ -1,4 +1,4 @@
-import { debounce } from '../utils'
+import { debounce, eventBus } from '../utils'
 
 export default {
   data() {
@@ -19,5 +19,7 @@ export default {
   props: ['screen-width'],
   mounted() {
     window.addEventListener('scroll', this.handleScroll, { passive: true })
+
+    eventBus.$on('closeNav', debounce(this.showNav, 200));
   }
 }

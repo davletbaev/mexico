@@ -48,10 +48,10 @@ const buildStyles = (mode, bs) => (done) => {
     flexbugs,
     ...((mode === 'production') ? [
       objectfit,
-      // uncss({
-      //   html: ['dist/**/*.html'],
-      //   ignore: ['\.js-.*', '--']
-      // }),
+      uncss({
+        html: ['dist/**/*.html'],
+        ignore: [/\.js-/, /\.swiper-/, /\.article/, /\.fade/, / \+ /]
+      }),
       cssnano,
     ] : [])
   ]

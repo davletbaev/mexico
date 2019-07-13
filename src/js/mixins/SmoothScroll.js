@@ -1,19 +1,31 @@
 import smoothscroll from 'smoothscroll-polyfill';
 
+import { eventBus } from '../utils';
+
 const SmoothScroll = {
   methods: {
     smoothScrollingInit() {
       smoothscroll.polyfill();
+      
+      document.body.addEventListener('click', (e) => {
+        if (e.target.hasAttribute('data-smooth')) {
+          e.preventDefault();
 
-      document.querySelectorAll('[data-smooth]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            e.preventDefault();
+          const target = e.target.getAttribute('href').slice(1);
+          
+          eventBus.$emit('closeNav')
+          this.scrollTo(target)
+        }
+      })
+      // document.querySelectorAll('[data-smooth]').forEach(anchor => {
+      //   anchor.addEventListener('click', (e) => {
+      //       e.preventDefault();
 
-            const target = anchor.getAttribute('href').slice(1);
+      //       const target = anchor.getAttribute('href').slice(1);
             
-            this.scrollTo(target)
-        });
-      });
+      //       this.scrollTo(target)
+      //   });
+      // });
     },
     scrollTo(target) {
       const element = document.getElementById(target);

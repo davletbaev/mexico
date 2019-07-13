@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import objectFitImages from 'object-fit-images';
 
 import { Accordion, Article, Header, FormRequest, FormPricing, Modal, Tabs } from './components'
 import { SmoothScroll } from './mixins'
 import { debounce } from './utils'
 
 Vue.use(VueAwesomeSwiper);
-
 
 const vm = new Vue({
   el: '#app',
@@ -86,6 +86,7 @@ const vm = new Vue({
     ModalComponent: Modal
   },
   mounted() {
+    objectFitImages();
     this.hasWebp = this.supportsWebp();
     document.body.classList.toggle('has-webp', this.hasWebp)
 

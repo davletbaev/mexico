@@ -42,7 +42,7 @@
                   <button type="button" class="control__btn control__btn--minus" @click="subtractSeats" aria-label="Уменьшить">
                     -
                   </button>
-                  <input class="control__input" type="number" name="seats" id="seats" v-model="seats">
+                  <input class="control__input" type="number" name="seats" id="seats" readonly :value="seats">
                   <button type="button" class="control__btn control__btn--plus" @click="addSeats" aria-label="Увеличить">
                     +
                   </button>
@@ -118,9 +118,9 @@
         </div>
       </tabs-component>
 
-      <div class="pricing__widget widget widget--aviasales">
-        Aviasales
-      </div>
+      {# Aviasales Widget #}
+      {# <div class="pricing__widget widget widget--aviasales">
+      </div> #}
     </div>
   </div>
 </section>

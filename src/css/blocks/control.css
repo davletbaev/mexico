@@ -196,6 +196,18 @@
       @extend .hyphens;
       font-size: 0.7rem;
       line-height: 1.57;
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color ease-out-quint;
+
+        &:hover,
+        &:focus {
+          border-color: var(--accent);
+        }
+      }
     }
   }
 

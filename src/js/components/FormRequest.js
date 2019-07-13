@@ -35,17 +35,26 @@ export default Vue.component('form-request', {
           phone: this.phone,
           contact: this.contact,
           city: this.city,
-          agree: this.agree,
-          tour: this.selectedTour || null
+          date: this.selectedTour.date || null,
+          seatsReserved: this.selectedTour.seatsReserved || null,
+          seatsAvailable: this.selectedTour.seatsAvailable || null,
+          seatsTotal: this.selectedTour.seatsTotal || null,
+          duration: this.selectedTour.duration || null,
+          priceCurrent: this.selectedTour.priceCurrent || null,
+          pricePrev: this.selectedTour.pricePrev || null
         }
         const url = this.$refs.form.getAttribute('action')
+
+        const formData = Object.keys(data).map((key) => {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+        }).join('&');
 
         fetch(url, {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
           },
-          body: JSON.stringify(data),
+          body: formData,
         })
         .then(res => {
           if (res.ok) {
