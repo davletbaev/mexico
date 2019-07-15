@@ -14,8 +14,6 @@ export default {
       const fullHeight = this.$refs.collapse.firstElementChild.scrollHeight 
       const duration = 10 * Math.pow(Math.log(fullHeight), 2)
 
-      debugger;
-
       const animationKeyframes = [
         { height: '10em' },
         { height: fullHeight + 'px' }

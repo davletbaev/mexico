@@ -16,4 +16,11 @@
   &.js-scrolling {
     box-shadow: var(--bs-default);
   }
+
+  @media(--laptop) {
+    &__nav {
+      margin-left: auto;
+      max-width: 55.5rem;
+    }
+  }
 }

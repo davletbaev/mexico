@@ -53,6 +53,7 @@
     padding: 1rem;
     background-color: var(--bg-white);
     border-radius: 0.4rem;
+    overflow: hidden;
   }
 
   &__heading {

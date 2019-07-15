@@ -1,4 +1,4 @@
-<header-component v-on:nav-show="fixBody" :screen-width="screenWidth" inline-template>
+<header-component @nav-show="fixBody" @nav-close="fixBody(false)" :screen-width="screenWidth" inline-template>
   <header :class="{'js-scrolling': isScrolling }"  class="header" >
     <div class="container">
       <nav class="header__nav nav">
@@ -13,7 +13,7 @@
         </div>
 
         <transition name="fade">
-          <div :class="{ 'js-active': isNavVisible }" class="nav__mobile" v-cloak v-if="isNavVisible || screenWidth >= 1024">
+          <div :class="{ 'js-active': isNavVisible }" class="nav__mobile" v-cloak v-show="isNavVisible || screenWidth >= 1024">
             <ul class="nav__menu menu">
               <li class="menu__item">
                 <a href="#program" class="menu__link" data-smooth>Программа</a>

@@ -9,12 +9,15 @@ const paths = require('../paths')
 const buildHtml = (mode) => (done) => {
   pump([
       gulp.src(paths.src.html),
-      rename({ dirname: '' }),
       nunjucks.compile(),
       beautify({
         indentSize: 2,
         indent_with_tabs: false,
         preserve_newlines: false,
+      }),
+      rename({
+        dirname: '',
+        // extname: ".php"
       }),
       gulp.dest(paths.dist.html)
   ], done)

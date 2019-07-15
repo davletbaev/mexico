@@ -30,12 +30,8 @@
   }
 
   @media(--desktop) {
-    display: flex;
-
     &__item {
       & + .contacts__item {
-        margin-top: 0;
-        margin-left: 2.5rem; 
       }
     }
   }

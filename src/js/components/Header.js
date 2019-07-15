@@ -12,6 +12,10 @@ export default {
       this.isNavVisible = !this.isNavVisible
       this.$emit('nav-show')
     },
+    closeNav() {
+      this.isNavVisible = false
+      this.$emit('nav-close')
+    },
     handleScroll() {
       this.isScrolling = window.pageYOffset > 10 || this.isNavVisible
     }
@@ -20,6 +24,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll, { passive: true })
 
-    eventBus.$on('closeNav', debounce(this.showNav, 200));
+    eventBus.$on('closeNav', debounce(this.closeNav, 200));
   }
 }

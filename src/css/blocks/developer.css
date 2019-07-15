@@ -14,4 +14,8 @@
     width: 1em;
     height: 0.54em;
   }
+
+  @media(--laptop) {
+    justify-content: flex-start;
+  }
 }

@@ -45,12 +45,13 @@
   }
 
   &__heading {
-    margin-top: 1.875rem;
+    margin-top: 1rem;
   }
 
   &__desc {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-size: var(--fs-lg);
+    line-height: 1.5;
 
     .label {
       margin: 0 0.25rem;
@@ -58,11 +59,11 @@
   }
 
   &__video {
-    margin-top: 1.875rem;
+    margin-top: 1rem;
   }
 
   &__button {
-    margin-top: 1.875rem;
+    margin-top: 1rem;
   }
 
   &__features {
@@ -89,7 +90,7 @@
       z-index: -1;
 
       &-wrap {
-        width: 568px;
+        width: 500px;
         height: auto;
       }
 
@@ -105,7 +106,7 @@
     }
 
     &__content {
-      padding-top: 3rem;
+      padding-top: 1rem;
       margin-left: 0;
     }
 
@@ -123,12 +124,16 @@
   @media(--laptop) {
     &__bg {
       left: auto;
-      right: 0;
+      right: 2rem;
     }
 
     &__content {
       max-width: 27rem;
-      padding-left: 5.5rem;
+      padding-left: 0;
+    }
+
+    &__features {
+      padding: 0.75rem 0 0.75rem;
     }
 
     &__features,
@@ -145,23 +150,22 @@
     }
 
     &__bg {
-      top: 3rem;
+      top: 0;
     }
 
     &__content {
-      padding-top: 8.5rem;
+      padding-left: 5.5rem;
       max-width: 34.2rem;
     }
   }
 
   @media(--hd) {
     &__bg {
-      top: 0;
-      right: -3rem;
+      right: 2rem;
     }
 
     &__bg-wrap {
-      width: 852px;
+      width: 600px;
     }
   }
 }

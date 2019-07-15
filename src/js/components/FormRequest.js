@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Inputmask from 'inputmask'
-import { debounce } from '../utils'
-
 
 var im = new Inputmask("+7 (999) 999 99 99", { showMaskOnHover: false, placeholder: "  ", onComplete: () => this.validation.phone = true });
 
@@ -24,7 +22,7 @@ export default Vue.component('form-request', {
       }
     }
   },
-  props: ['selectedTour'],
+  props: ['selectedTour', 'referrer'],
   methods: {
     submitForm() {
       const isValid = this.validate('all');

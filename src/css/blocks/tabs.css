@@ -69,6 +69,31 @@
     margin: 0 -2.5rem;
     padding: 0 2.5rem;
   }
+
+  @media(--laptop) {
+    margin: 0;
+    padding: 0;
+
+    &__list {
+      &:after {
+        content: none;
+      }
+    }
+
+    &__item {
+      & + .tabs-nav__item {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media(--desktop) {
+    &__item {
+      & + .tabs-nav__item {
+        margin-left: 0.9rem;
+      }
+    }
+  }
 }
 
 .tab-pane {

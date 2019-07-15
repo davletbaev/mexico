@@ -69,6 +69,14 @@ const genericTask = (mode = 'development') => {
       Object.assign(bs.reload, { displayName: `Reloading browser` })
     ))
 
+    // Watch - Files
+    gulp.watch(paths.watch.files)
+    .on('all', gulp.series(
+      Object.assign(tasks.clean(paths.dist.files), { displayName: 'Clean Files' }),
+      Object.assign(tasks.files(mode), { displayName: `Watching Files` }),
+      Object.assign(bs.reload, { displayName: `Reloading browser` })
+    ))
+
     // Watch - Styles
     gulp.watch(paths.watch.css)
     .on('all', gulp.series(
@@ -97,6 +105,7 @@ const genericTask = (mode = 'development') => {
     Object.assign(tasks.svg(mode), { displayName: `Build SVG Sprite- ${ modeType }` }),
     Object.assign(tasks.fonts(mode), { displayName: `Build Fonts - ${ modeType }` }),
     Object.assign(tasks.favicon(mode), { displayName: `Build Favicon - ${ modeType }` }),
+    Object.assign(tasks.files(mode), { displayName: `Build Files - ${ modeType }` }),
     isDev && Object.assign(startBrowserSync, { displayName: `Browser Loading & Watching Task` }),
     !isDev && Object.assign(tasks.noindex, { displayName: `Added Robots.txt to prevent indexing` })
   ].filter(Boolean)

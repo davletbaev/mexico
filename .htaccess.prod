@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^energytravel\.pro$ [NC]
+RewriteRule ^(.*)$ http://energytravel.pro/$1 [L,R=301]
+
+RewriteEngine on
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<Files ~ "cmsmagazinecb95ec316d1e98b0ce587af79ab5c354\.txt$">
+  Allow from all
+</Files>

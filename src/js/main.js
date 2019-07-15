@@ -20,6 +20,8 @@ const vm = new Vue({
       form: false,
       video: false
     },
+    referrer: null,
+    videoStatus: 'paused',
     swiperOptions: {
       spaceBetween: 100,
       speed: 500,
@@ -44,11 +46,11 @@ const vm = new Vue({
 
       return false;
     },
-    fixBody(withHack = true) {
+    fixBody(fix, withHack = true) {
       !this.bodyFixed && (this.prevScroll = window.pageYOffset)
 
 
-      if (this.bodyFixed) {
+      if (fix || this.bodyFixed) {
         this.bodyFixed = false;
 
         window.scrollTo(0, this.prevScroll)
@@ -63,9 +65,21 @@ const vm = new Vue({
         }, 300)
       }
     },
-    toggleModal(modal) {
+    playVideo() {
+      const video = this.$refs.video;
+
+      if (video.paused) {
+        video.play()
+        video.controls = true
+        this.videoStatus = 'playing'
+      }
+
+    },
+    toggleModal(modal, referrer) {
+      if (!referrer) this.referrer = null
+      this.referrer = referrer
       this.modals[modal] = !this.modals[modal]
-      this.fixBody(false)
+      this.fixBody(null, false)
     },
     handleResize() {
       this.screenWidth = window.innerWidth

@@ -10,5 +10,6 @@ const sprite      = require('./tasks/sprite')
 const autoreload  = require('./tasks/autoreload')
 const revision    = require('./tasks/revision') 
 const noindex     = require('./tasks/noindex')
+const files        = require('./tasks/files')
 
-module.exports = { views, styles, scripts, images, fonts, favicon, clean, svg, sprite, autoreload, revision, noindex }
+module.exports = { views, styles, scripts, images, fonts, favicon, clean, svg, sprite, autoreload, revision, noindex, files }

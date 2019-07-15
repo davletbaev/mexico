@@ -1,5 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  mb_internal_encoding("UTF-8");
+
   $name = strip_tags(trim($_POST["name"]));
   $name = str_replace(array("\r","\n"),array(" "," "),$name);
   $phone = trim($_POST["phone"]);
@@ -44,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 
-  $recipient = "inferion00@gmail.com";
+  $recipient = "info@energytravel.com";
 
   $emailsubject = "Новая заявка: от " . $name;
 
@@ -57,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($has_tour_info) {
     $email_content .= "<p>Количество мест: " . $seats_reserved . "</p>\r\n";
     $email_content .= "<hr/>\r\n";
+    $email_content .= "<h3>Информация о туре:</h3>";
     $email_content .= "<p>Даты: " . $date . "</p>\r\n";
     $email_content .= "<p>Мест доступно: " . $seats_available . "</p>\r\n";
     $email_content .= "<p>Всего мест: " . $seats_total . "</p>\r\n";
@@ -79,7 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 } else {
-  http_response_code(403);
-  echo "Произошла ошибка. Повторите попытку позднее.";
+  header('HTTP/1.1 200 OK');
+  header('Location: http://'.$_SERVER['HTTP_HOST']);
+  exit();
 }
 ?>

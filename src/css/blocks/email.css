@@ -11,6 +11,7 @@
     @extend .link;
 
     display: inline-flex;
+    vertical-align: middle;
     align-items: center;
       
     &:hover,
@@ -28,12 +29,10 @@
   }
 
   @media(--tablet) {
-    text-align: right;
+    text-align: left;
   }
 
   @media(--laptop) {
-    text-align: left;
-
     &__link {
       &:hover,
       &:focus {

@@ -5,8 +5,9 @@
     line-height: 1.5;
   }
 
-  &__button {
+  &__slogan {
     margin-top: 2rem;
+    color: var(--accent);
   }
 
   @media(--tablet) {
