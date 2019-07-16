@@ -86,7 +86,14 @@ const vm = new Vue({
     },
     handlePricingForm(formData) {
       this.selectedTour = formData
-      this.toggleModal('form')
+      this.toggleModal('form', 'pricing')
+    },
+    aviasalesInit() {
+      let scriptEl = document.createElement('script');
+      scriptEl.setAttribute('src', '//aviasales.energytravel.pro/iframe.js');
+      scriptEl.setAttribute('charset', 'utf-8');
+      scriptEl.setAttribute('type', 'text/javascript');
+      this.$refs.aviasales.appendChild(scriptEl);
     }
   },
   mixins: [
@@ -103,7 +110,8 @@ const vm = new Vue({
     objectFitImages();
     this.hasWebp = this.supportsWebp();
     document.body.classList.toggle('has-webp', this.hasWebp)
-
     window.addEventListener('resize', debounce(this.handleResize, 250), { passive: true })
+
+    this.aviasalesInit();
   },
 })

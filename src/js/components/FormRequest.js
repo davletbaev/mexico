@@ -22,10 +22,20 @@ export default Vue.component('form-request', {
       }
     }
   },
+  computed: {
+    formTitle() {
+      switch (this.referrer) {
+        case 'program': return 'Заполни форму для получения презентации по туру'
+        case 'pricing': return 'Заполни форму<br> для бронирования тура'
+        default: return 'Получи 5 советов по восстановлению жизненных сил, находясь в путешествии'
+      }
+    }
+  },
   props: ['selectedTour', 'referrer'],
   methods: {
     submitForm() {
       const isValid = this.validate('all');
+      const selectedTour = this.selectedTour || {}
 
       if (isValid) {
         const data = {
@@ -33,13 +43,13 @@ export default Vue.component('form-request', {
           phone: this.phone,
           contact: this.contact,
           city: this.city,
-          date: this.selectedTour.date || null,
-          seatsReserved: this.selectedTour.seatsReserved || null,
-          seatsAvailable: this.selectedTour.seatsAvailable || null,
-          seatsTotal: this.selectedTour.seatsTotal || null,
-          duration: this.selectedTour.duration || null,
-          priceCurrent: this.selectedTour.priceCurrent || null,
-          pricePrev: this.selectedTour.pricePrev || null
+          date: selectedTour.date || null,
+          seatsReserved: selectedTour.seatsReserved || null,
+          seatsAvailable: selectedTour.seatsAvailable || null,
+          seatsTotal: selectedTour.seatsTotal || null,
+          duration: selectedTour.duration || null,
+          priceCurrent: selectedTour.priceCurrent || null,
+          pricePrev: selectedTour.pricePrev || null
         }
         const url = this.$refs.form.getAttribute('action')
 

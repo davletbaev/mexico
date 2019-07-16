@@ -1,5 +1,7 @@
 .email {
   text-align: center;
+  font-size: var(--fs-xs);
+  align-self: center;
 
   &__label {
     line-height: 1;
@@ -11,8 +13,8 @@
     @extend .link;
 
     display: inline-flex;
-    vertical-align: middle;
     align-items: center;
+    vertical-align: middle;
       
     &:hover,
     &:focus {

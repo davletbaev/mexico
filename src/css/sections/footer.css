@@ -22,6 +22,7 @@
   &__item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
 
     & + .footer__item {
@@ -51,14 +52,6 @@
     }
   }
 
-  &__widget {
-    margin-top: 2rem;
-  }
-
-  &__legals {
-    margin-top: 1.5rem;
-  }
-
   &__privacy {
     @extend .link;
 
@@ -83,12 +76,12 @@
   }
 
   &__developer {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   @media(--tablet) {
     &__row {
-      flex-direction: row-reverse;
+      flex-direction: row;
       align-items: normal;
       justify-content: flex-start;
 
@@ -111,11 +104,11 @@
     }
 
     &__contacts {
-      margin-top: 0;
+      margin-top: 1rem;
     }
 
     &__privacy {
-      margin-top: auto;
+      margin-top: 1rem;
     }
   }
 
@@ -123,8 +116,8 @@
     font-size: var(--fs-xs);
 
     &__item {
-      &:first-child {
-        flex: 0 0 20rem;
+      &:last-child {
+        flex: 0 0 50%;
       }
     }
 
@@ -163,7 +156,7 @@
     }
 
     &__developer {
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
       flex: 0 0 auto;
       font-size: var(--fs-xxs);
     }

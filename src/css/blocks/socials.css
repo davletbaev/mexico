@@ -4,10 +4,12 @@
     @extend .reset-list;
 
     display: flex;
+    align-items: center;
   }
 
   &__item {
     font-size: 2.2em;
+    line-height: 1;
 
     & + .socials__item {
       margin-left: 0.7em;
@@ -15,6 +17,8 @@
   }
 
   &__link {
+    display: block;
+    line-height: 1;
     --socials-color: var(--accent);
     color: var(--socials-color);
     transition: color ease-out-quint 0.3s;
@@ -25,6 +29,10 @@
         --socials-color: var(--accent-darker);
       }
     }
+  }
+
+  &__icon {
+    display: block;
   }
 
   @media(--laptop) {

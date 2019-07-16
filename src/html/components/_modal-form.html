@@ -8,15 +8,13 @@
 
         <form-request :selected-tour="selectedTour" :referrer="referrer" inline-template>
           <form action="/mail.php" class="form form--request" ref="form">
-            <h3 v-if="!success && !error" class="modal__heading heading heading--h4 heading--text-center">
-              {{ '{{ referrer === "program" ? "Заполни форму для получения презентации по туру" : "Получи 5 советов по восстановлению жизненных сил, находясь в путешествии" }}' | safe }}
-              
+            <h3 v-if="!success && !error" class="modal__heading heading heading--h4 heading--text-center" v-html="formTitle">
             </h3>
             
             <div class="form__main" v-if="!success && !error">
             
               <div class="form__group">
-                <label class="control" :class="{ 'control--error': validation.name === false }">
+                <label class="control" :class="{ 'js-error': validation.name === false }">
                   <input type="text" class="control__input" name="name" @blur="validate($event)" v-model="name" required>
                   <transition name="fade">
                     <div class="control__label control__label--floating" v-show="!name">Имя</div>
@@ -25,7 +23,7 @@
               </div>
 
               <div class="form__group">
-                <label class="control" :class="{ 'control--error': validation.phone === false }">
+                <label class="control" :class="{ 'js-error': validation.phone === false }">
                   <input type="tel" class="control__input" name="phone" @blur="validate($event)" v-model="phone" ref="phone" required>
                   <transition name="fade">
                     <div class="control__label control__label--floating" v-show="!phone">Телефон/WhatsApp</div>
@@ -34,7 +32,7 @@
               </div>
 
               <div class="form__group">
-                <label class="control" :class="{ 'control--error': validation.contact === false }">
+                <label class="control" :class="{ 'js-error': validation.contact === false }">
                   <input type="text" class="control__input" name="contact" @blur="validate($event)" v-model="contact" required>
                   <transition name="fade">
                     <div class="control__label control__label--floating" v-show="!contact">E-mail или ID в соц. сетях</div>
@@ -43,7 +41,7 @@
               </div>
 
               <div class="form__group">
-                <label class="control" :class="{ 'control--error': validation.city === false }">
+                <label class="control" :class="{ 'js-error': validation.city === false }">
                   <input type="text" class="control__input" name="city" @blur="validate($event)" v-model="city" required>
                   <transition name="fade">
                     <div class="control__label control__label--floating" v-show="!city">Город</div>
@@ -52,7 +50,7 @@
               </div>
 
               <div class="form__group form__group--agree">
-                <label class="control control--checkbox" :class="{ 'control--error': validation.agree === false }">
+                <label class="control control--checkbox" :class="{ 'js-error': validation.agree === false }">
                   <input type="checkbox" name="agree" class="control__input" @change="validate($event)" value="true" v-model="agree" checked required>
                   <span class="control__check">
                     {{ icon('checked', 'control__check-icon') }}

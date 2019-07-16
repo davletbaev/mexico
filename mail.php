@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 
-  $recipient = "info@energytravel.com";
+  $recipient = "info@energytravel.pro";
 
   $emailsubject = "Новая заявка: от " . $name;
 

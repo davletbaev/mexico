@@ -13,10 +13,6 @@
   @media(--tablet) {
     text-align: center;
 
-    .container {
-      max-width: 900px;
-    }
-
     &__text {
       hyphens: none;
       text-align: center;
