@@ -2,7 +2,7 @@ const gulp             = require('gulp')
 const pump             = require('pump')
 const changed          = require('gulp-changed')
 const imagemin         = require('gulp-imagemin')
-const imageminWebp     = require('imagemin-webp')
+// const imageminWebp     = require('imagemin-webp')
 const imageminMozjpeg  = require('imagemin-mozjpeg')
 const imageminOptiPng  = require('imagemin-optipng')
 const responsive       = require('gulp-responsive')
@@ -195,6 +195,55 @@ const buildImages = (mode) => (done) => {
           suffix: '@3x'
         }
       }],
+      '**/poster.png': [{
+        width: 470,
+        format: 'jpg',
+        rename: {
+          suffix: '@1x',
+        }
+      },{
+        width: 470,
+        format: 'webp',
+        rename: {
+          suffix: '@1x'
+        }
+      },{
+        width: 700,
+        format: 'jpg',
+        rename: {
+          suffix: '@1.5x'
+        }
+      },{
+        width: 700,
+        format: 'webp',
+        rename: {
+          suffix: '@1.5x'
+        }
+      },{
+        width: 1050,
+        format: 'jpg',
+        rename: {
+          suffix: '@2x'
+        }
+      },{
+        width: 1050,
+        format: 'webp',
+        rename: {
+          suffix: '@2x'
+        }
+      },{
+        width: 1400,
+        format: 'jpg',
+        rename: {
+          suffix: '@3x'
+        }
+      },{
+        width: 1400,
+        format: 'webp',
+        rename: {
+          suffix: '@3x'
+        }
+      }],
       '**/illustration1.png': [{
         width: 568,
         rename: {
@@ -285,17 +334,6 @@ const buildImages = (mode) => (done) => {
         rename: {
           suffix: '@3x'
         }
-      },{
-        width: 2428,
-        rename: {
-          suffix: '@4x'
-        }
-      },{
-        width: 2428,
-        format: 'webp',
-        rename: {
-          suffix: '@4x'
-        }
       }],
       '**/illustration3.png': [{
         width: 607,
@@ -340,17 +378,6 @@ const buildImages = (mode) => (done) => {
         format: 'webp',
         rename: {
           suffix: '@3x'
-        }
-      },{
-        width: 2428,
-        rename: {
-          suffix: '@4x'
-        }
-      },{
-        width: 2428,
-        format: 'webp',
-        rename: {
-          suffix: '@4x'
         }
       }],
       '**/illustration4.png': [{
@@ -416,22 +443,23 @@ const buildImages = (mode) => (done) => {
       skipOnEnlargement: true,
       errorOnEnlargement: false
     }),
-    // ...((mode === 'production') ? [
-    //   imagemin([
-    //     imageminWebp({
-    //       quality: 80,
-    //       method: 4
-    //     }),
-    //     imageminMozjpeg({
-    //       quality: 80,
-    //       progressive: true
-    //     }),
-    //     imageminOptiPng({
-    //       optimizationLevel: 2,
-    //       paletteReduction: true
-    //     }),
-    //   ])
-    // ] : []),
+    ...((mode === 'production') ? [
+      imagemin([
+        // imageminWebp({
+        //   quality: 80,
+        //   method: 4
+        // }),
+        imageminMozjpeg({
+          quality: 80,
+          progressive: true
+        }),
+        imageminOptiPng({
+          optimizationLevel: 4,
+          paletteReduction: true,
+          progressive: true
+        }),
+      ])
+    ] : []),
     gulp.dest(paths.dist.images)
   ], done)
 }

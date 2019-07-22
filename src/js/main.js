@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueLazyload from 'vue-lazyload'
 import objectFitImages from 'object-fit-images';
 
-import { Accordion, Article, Header, FormRequest, FormPricing, Modal, Tabs } from './components'
+import { Accordion, Article, Header, Modal, Tabs } from './components'
 import { SmoothScroll } from './mixins'
 import { debounce } from './utils'
+
+Vue.use(VueLazyload, {
+  preLoad: 1.5,
+  loading: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSI+CiAgPHBhdGggZD0iTTAgNCBMMCAyOCBMMzIgMjggTDMyIDQgeiBNNCAyNCBMMTAgMTAgTDE1IDE4IEwxOCAxNCBMMjQgMjR6IE0yNSA3IEE0IDQgMCAwIDEgMjUgMTUgQTQgNCAwIDAgMSAyNSA3Ij48L3BhdGg+Cjwvc3ZnPg==',
+  attempt: 1
+})
 
 Vue.use(VueAwesomeSwiper);
 
@@ -21,7 +28,7 @@ const vm = new Vue({
       video: false
     },
     referrer: null,
-    videoStatus: 'paused',
+    videoStatus: null,
     swiperOptions: {
       spaceBetween: 100,
       speed: 500,
@@ -34,6 +41,11 @@ const vm = new Vue({
         prevEl: '.swiper-button-prev'
       },
       allowTouchMove: false
+    }
+  },
+  computed: {
+    videoSrc() {
+      return this.videoStatus ? 'files/video.mp4' : ''
     }
   },
   methods: {
@@ -66,14 +78,20 @@ const vm = new Vue({
       }
     },
     playVideo() {
-      const video = this.$refs.video;
+      let video = this.$refs.video;
 
-      if (video.paused) {
-        video.play()
-        video.controls = true
+      if (!this.videoStatus || video.paused) {
         this.videoStatus = 'playing'
-      }
 
+        if (!video) {
+          setTimeout(() => {
+            video = this.$refs.video
+            video.play()
+          }, 400)
+        } else {
+          video.play()
+        }
+      }
     },
     toggleModal(modal, referrer) {
       if (!referrer) this.referrer = null

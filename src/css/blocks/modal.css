@@ -66,6 +66,10 @@
   }
 
   &--video {
+    .modal__inner {
+      min-width: 0;
+    }
+
     .modal__content {
       padding: 0;
     }

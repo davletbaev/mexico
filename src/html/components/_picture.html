@@ -2,22 +2,23 @@
   <picture>
     <source
       media="(max-width: 56em)"
-      srcset="{{ path }}@1x.webp 1x, {{ path }}@2x.webp 2x"
+      data-srcset="{{ path }}@1x.webp 1x, {{ path }}@2x.webp 2x"
       type="image/webp"
     > 
     <source
       media="(max-width: 56em)"
-      srcset="{{ path }}@1x.{{ ext }} 1x, {{ path }}@2x.{{ ext }} 2x"
+      data-srcset="{{ path }}@1x.{{ ext }} 1x, {{ path }}@2x.{{ ext }} 2x"
     >
     <source
-      srcset="{{ path }}@1.5x.webp 1x, {{ path }}@3x.webp 2x"
+      data-srcset="{{ path }}@1.5x.webp 1x, {{ path }}@3x.webp 2x"
       type="image/webp"
     >
     <img
       {% if classname %}class="{{ classname }}"{% endif %}
-      src="{{ path }}@1.5x.{{ ext }}"
-      srcset="{{ path }}@3x.{{ ext }} 2x"
+      v-lazy="'{{ path }}@1.5x.{{ ext }}'"
+      data-srcset="{{ path }}@3x.{{ ext }} 2x"
       alt="{{ alt }}"
+      v-cloak
     >
   </picture>
 {% endmacro %}

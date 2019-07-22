@@ -162,6 +162,7 @@
       grid-gap: 0.25rem;
       order: 2;
       flex: 0 0 30%;
+      width: 100%;
       max-width: 21rem;
       flex-direction: column;
       padding: 0;

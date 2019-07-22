@@ -7,10 +7,33 @@
 
       <div class="modal__content">
         <div class="widget widget--video">
-          <video src="files/video.mp4" ref="video" @pause="videoStatus = 'paused'" @play="videoStatus = 'playing'"></video>
+          <video v-if="videoStatus" :src="videoSrc" ref="video" @pause="videoStatus = 'paused'" controls @play="videoStatus = 'playing'"></video>
+          <div v-else class="widget__poster">
+            <picture>
+              <source
+                media="(max-width: 56em)"
+                srcset="img/cover/poster@1x.webp 1x, img/cover/poster@2x.webp 2x"
+                type="image/webp"
+              > 
+              <source
+                media="(max-width: 56em)"
+                srcset="img/cover/poster@1x.jpg 1x, img/cover/poster@2x.jpg 2x"
+              >
+              <source
+                srcset="img/cover/poster@1.5x.webp 1x, img/cover/poster@3x.webp 2x"
+                type="image/webp"
+              >
+              <img
+                class="widget__poster-img"
+                src="img/cover/poster@1.5x.jpg"
+                srcset="img/cover/poster@3x.jpg 2x"
+                alt="Видео-приглашение от основателей компании Energy TRAVEL"
+              >
+            </picture>
+          </div>
 
           <transition name="fade">
-            <button v-show="videoStatus === 'paused'" class="widget__button" @click="playVideo()">
+            <button v-show="videoStatus !== 'playing'" class="widget__button" @click="playVideo()">
             {{ icon('play', 'toggle__icon') }}
             </button>
           </transition>
