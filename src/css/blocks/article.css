@@ -38,21 +38,23 @@
   &__content {
     @extend .hyphens;
 
-    height: 10em;
+    height: 8.5em;
     margin-top: 0.7rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    /* autoprefixer: off */
-    -webkit-box-orient: vertical;
     overflow: hidden; 
 
-    line-height: 1.7;
+    &-inner {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      /* autoprefixer: off */
+      -webkit-box-orient: vertical;
+      white-space: pre-line;
+
+      line-height: 1.7;
+    }
 
     &.js-collapse {
-      display: block;
-
       .article__content-inner {
-        overflow: scroll;
+        display: block;
       }
     }
   }

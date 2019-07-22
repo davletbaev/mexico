@@ -138,7 +138,7 @@ const buildImages = (mode) => (done) => {
           suffix: '@3x'
         }
       }],
-      '**/play-btn.jpg': [{
+      '**/play-btn.png': [{
         width: 84,
         height: 84,
         format: 'jpg',

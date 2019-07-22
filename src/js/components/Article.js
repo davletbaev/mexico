@@ -11,11 +11,11 @@ export default {
     collapseBlock() {
       this.isCollapsed = !this.isCollapsed
 
-      const fullHeight = this.$refs.collapse.firstElementChild.scrollHeight 
+      const fullHeight = this.$refs.collapse.firstElementChild.scrollHeight
       const duration = 10 * Math.pow(Math.log(fullHeight), 2)
 
       const animationKeyframes = [
-        { height: '10em' },
+        { height: '8.5em' },
         { height: fullHeight + 'px' }
       ]
 

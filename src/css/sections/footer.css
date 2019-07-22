@@ -58,14 +58,14 @@
     display: inline-block;
     line-height: 1;
     margin-top: 2rem;
-    border-bottom: 1px solid transparent;
-    transition: border-color ease-out-quint 0.3s;
+    border-bottom: 1px solid var(--white);
+    transition: opacity ease-out-quint 0.3s;
     align-self: flex-start;
+    opacity: 1;
 
     &:hover,
     &:focus {
-      color: var(--white);
-      border-color: currentColor;
+      opacity: 0.8;
     }
   }
 

@@ -21,9 +21,10 @@
       <div class="cover__video">
         <button class="toggle toggle--video" aria-label="Посмотреть видео" @click="toggleModal('video')">
           <div class="toggle__img-wrap">
+            {{ icon('play', 'toggle__icon') }}
             {{ picture('Видео', 'toggle__img', 'img/cover/play-btn', 'jpg') }}
           </div>
-          {{ icon('play', 'toggle__icon') }}
+          <span class="toggle__label">Короткое видео-приглашение<br/> от основателей компании</span>
         </button>
       </div>
 

@@ -47,7 +47,7 @@
         </div>
 
         <div class="tabs__content">
-          <div class="tab-pane" id="see" v-if="tabPaneActive == 1">
+          <div class="tab-pane" key="see" id="see" v-if="tabPaneActive == 1">
             <swiper :options="swiperOptions">
               <button class="swiper-button-prev" slot="button-prev">
                 {{ icon('prev', "swiper-button__icon") }}
@@ -189,7 +189,7 @@
             </swiper>
           </div>
 
-          <div class="tab-pane" v-cloak id="feel" v-if="tabPaneActive == 2">
+          <div class="tab-pane" v-cloak key="feel" id="feel" v-if="tabPaneActive == 2">
             <swiper :options="swiperOptions">
               <button class="swiper-button-prev" slot="button-prev">
                 {{ icon('prev', "swiper-button__icon") }}
@@ -276,7 +276,7 @@
             </swiper>
           </div>
 
-          <div class="tab-pane" v-cloak id="surprize" v-if="tabPaneActive == 3">
+          <div class="tab-pane" v-cloak key="surprize" id="surprize" v-if="tabPaneActive == 3">
             <swiper :options="swiperOptions">
               <button class="swiper-button-prev" slot="button-prev">
                 {{ icon('prev', "swiper-button__icon") }}
@@ -366,7 +366,7 @@
             </swiper>
           </div>
 
-          <div class="tab-pane" v-cloak id="restore" v-if="tabPaneActive == 4">
+          <div class="tab-pane" v-cloak key="restore" id="restore" v-if="tabPaneActive == 4">
             <swiper :options="swiperOptions">
               <button class="swiper-button-prev" slot="button-prev">
                 {{ icon('prev', "swiper-button__icon") }}

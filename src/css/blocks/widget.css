@@ -43,10 +43,6 @@
     }
   }
 
-  & > div {
-    width: 125px !important;
-  }
-
   @media(--tablet) {
     justify-content: flex-start;
   }

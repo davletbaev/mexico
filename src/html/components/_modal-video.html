@@ -7,7 +7,7 @@
 
       <div class="modal__content">
         <div class="widget widget--video">
-          <video src="files/video.mp4" ref="video" @pause="videoStatus = 'paused'"></video>
+          <video src="files/video.mp4" ref="video" @pause="videoStatus = 'paused'" @play="videoStatus = 'playing'"></video>
 
           <transition name="fade">
             <button v-show="videoStatus === 'paused'" class="widget__button" @click="playVideo()">

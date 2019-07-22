@@ -4,20 +4,37 @@
   position: relative;
 
   &--video {
-    width: 4.875rem;
-    height: 4.875rem;
-    padding: 0.3125rem;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 1.5rem 0.2rem 0.2rem;
     border: 1px dashed var(--accent);
-    border-radius: 50%;
+    border-radius: 2rem;
 
     .toggle__icon {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-      font-size: 1.875rem;
+      font-size: 1.2rem;
       color: var(--white);
-      z-index: 2;
+      z-index: 3;
+    }
+
+    .toggle__label {
+      flex: 0 0 auto;
+      text-align: left;
+      margin-left: 1rem;
+      font-family: var(--ff-alt);
+      font-size: var(--fs-xs);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      transition: color ease-out-quint 0.3s;
+    }
+
+    .toggle__img-wrap {
+      flex: 0 0 3rem;
+      width: 3rem;
+      height: 3rem;
     }
 
     &:hover,
@@ -25,6 +42,10 @@
       .toggle__img {
         will-change: transform;
         transform: scale(1.05);
+      }
+
+      .toggle__label {
+        color: var(--text-primary)
       }
     }
   }
@@ -105,8 +126,7 @@
 
   @media(--tablet) {
     &--video {
-      width: 4.9rem;
-      height: 4.9rem;
+      
     }
   }
 }
