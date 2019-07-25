@@ -15,8 +15,13 @@
         [v-cloak] {
             display: none !important;
         }
+
+        img[v-cloak] {
+            opacity: 0 !important;
+            display: block !important;
+        }
     </style>
-    <link rel="stylesheet" href="css/styles.css?v=4cf6bb">
+    <link rel="stylesheet" href="css/styles.css?v=d7bce1">
 </head>
 
 <body>
@@ -88,10 +93,10 @@
                     <div class="cover__bg">
                         <div class="cover__bg-wrap" v-if="screenWidth >= 768">
                             <picture>
-                                <source media="(max-width: 56em)" srcset="img/illustrations/illustration1@1x.webp 1x, img/illustrations/illustration1@2x.webp 2x" type="image/webp">
-                                <source media="(max-width: 56em)" srcset="img/illustrations/illustration1@1x.png 1x, img/illustrations/illustration1@2x.png 2x">
-                                <source srcset="img/illustrations/illustration1@1.5x.webp 1x, img/illustrations/illustration1@3x.webp 2x" type="image/webp">
-                                <img class="cover__bg-img" src="img/illustrations/illustration1@1.5x.png" srcset="img/illustrations/illustration1@3x.png 2x" alt="Авторский энерджи-тур в Мексику">
+                                <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration1@1x.webp 1x, img/illustrations/illustration1@2x.webp 2x" type="image/webp">
+                                <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration1@1x.png 1x, img/illustrations/illustration1@2x.png 2x">
+                                <source data-srcset="img/illustrations/illustration1@1.5x.webp 1x, img/illustrations/illustration1@3x.webp 2x" type="image/webp">
+                                <img class="cover__bg-img" v-lazy="'img/illustrations/illustration1@1.5x.png'" data-srcset="img/illustrations/illustration1@1.5x.png 1x, img/illustrations/illustration1@3x.png 2x" alt="Авторский энерджи-тур в Мексику" v-cloak>
                             </picture>
                         </div>
                     </div>
@@ -109,10 +114,10 @@
                                         <use xlink:href="img/icons.svg#play"></use>
                                     </svg>
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/cover/play-btn@1x.webp 1x, img/cover/play-btn@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/cover/play-btn@1x.jpg 1x, img/cover/play-btn@2x.jpg 2x">
-                                        <source srcset="img/cover/play-btn@1.5x.webp 1x, img/cover/play-btn@3x.webp 2x" type="image/webp">
-                                        <img class="toggle__img" src="img/cover/play-btn@1.5x.jpg" srcset="img/cover/play-btn@3x.jpg 2x" alt="Видео">
+                                        <source media="(max-width: 56em)" data-srcset="img/cover/play-btn@1x.webp 1x, img/cover/play-btn@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/cover/play-btn@1x.jpg 1x, img/cover/play-btn@2x.jpg 2x">
+                                        <source data-srcset="img/cover/play-btn@1.5x.webp 1x, img/cover/play-btn@3x.webp 2x" type="image/webp">
+                                        <img class="toggle__img" v-lazy="'img/cover/play-btn@1.5x.jpg'" data-srcset="img/cover/play-btn@1.5x.jpg 1x, img/cover/play-btn@3x.jpg 2x" alt="Видео" v-cloak>
                                     </picture>
                                 </div>
                                 <span class="toggle__label">Короткое видео-приглашение<br /> от основателей компании</span>
@@ -210,10 +215,10 @@
             <section class="section call-to-action">
                 <div class="section__cover">
                     <picture>
-                        <source media="(max-width: 56em)" srcset="img/illustrations/illustration2@1x.webp 1x, img/illustrations/illustration2@2x.webp 2x" type="image/webp">
-                        <source media="(max-width: 56em)" srcset="img/illustrations/illustration2@1x.png 1x, img/illustrations/illustration2@2x.png 2x">
-                        <source srcset="img/illustrations/illustration2@1.5x.webp 1x, img/illustrations/illustration2@3x.webp 2x" type="image/webp">
-                        <img class="section__cover-img" src="img/illustrations/illustration2@1.5x.png" srcset="img/illustrations/illustration2@3x.png 2x" alt="Иллюстрация">
+                        <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration2@1x.webp 1x, img/illustrations/illustration2@2x.webp 2x" type="image/webp">
+                        <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration2@1x.png 1x, img/illustrations/illustration2@2x.png 2x">
+                        <source data-srcset="img/illustrations/illustration2@1.5x.webp 1x, img/illustrations/illustration2@3x.webp 2x" type="image/webp">
+                        <img class="section__cover-img" v-lazy="'img/illustrations/illustration2@1.5x.png'" data-srcset="img/illustrations/illustration2@1.5x.png 1x, img/illustrations/illustration2@3x.png 2x" alt="Иллюстрация" v-cloak>
                     </picture>
                 </div>
                 <div class="container">
@@ -269,10 +274,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/mexico@1x.webp 1x, img/program/mexico@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/mexico@1x.jpg 1x, img/program/mexico@2x.jpg 2x">
-                                                            <source srcset="img/program/mexico@1.5x.webp 1x, img/program/mexico@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/mexico@1.5x.jpg" srcset="img/program/mexico@3x.jpg 2x" alt="Мехико">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/mexico@1x.webp 1x, img/program/mexico@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/mexico@1x.jpg 1x, img/program/mexico@2x.jpg 2x">
+                                                            <source data-srcset="img/program/mexico@1.5x.webp 1x, img/program/mexico@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/mexico@1.5x.jpg'" data-srcset="img/program/mexico@1.5x.jpg 1x, img/program/mexico@3x.jpg 2x" alt="Мехико" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -287,10 +292,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/sotano-de-las-golondrinas@1x.webp 1x, img/program/sotano-de-las-golondrinas@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/sotano-de-las-golondrinas@1x.jpg 1x, img/program/sotano-de-las-golondrinas@2x.jpg 2x">
-                                                            <source srcset="img/program/sotano-de-las-golondrinas@1.5x.webp 1x, img/program/sotano-de-las-golondrinas@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/sotano-de-las-golondrinas@1.5x.jpg" srcset="img/program/sotano-de-las-golondrinas@3x.jpg 2x" alt="El Sotano de las Golondrinas">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/sotano-de-las-golondrinas@1x.webp 1x, img/program/sotano-de-las-golondrinas@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/sotano-de-las-golondrinas@1x.jpg 1x, img/program/sotano-de-las-golondrinas@2x.jpg 2x">
+                                                            <source data-srcset="img/program/sotano-de-las-golondrinas@1.5x.webp 1x, img/program/sotano-de-las-golondrinas@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/sotano-de-las-golondrinas@1.5x.jpg'" data-srcset="img/program/sotano-de-las-golondrinas@1.5x.jpg 1x, img/program/sotano-de-las-golondrinas@3x.jpg 2x" alt="El Sotano de las Golondrinas" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -305,10 +310,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/popocatepetl@1x.webp 1x, img/program/popocatepetl@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/popocatepetl@1x.jpg 1x, img/program/popocatepetl@2x.jpg 2x">
-                                                            <source srcset="img/program/popocatepetl@1.5x.webp 1x, img/program/popocatepetl@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/popocatepetl@1.5x.jpg" srcset="img/program/popocatepetl@3x.jpg 2x" alt="Iztaccihuatl and Popocatepetl National Park">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/popocatepetl@1x.webp 1x, img/program/popocatepetl@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/popocatepetl@1x.jpg 1x, img/program/popocatepetl@2x.jpg 2x">
+                                                            <source data-srcset="img/program/popocatepetl@1.5x.webp 1x, img/program/popocatepetl@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/popocatepetl@1.5x.jpg'" data-srcset="img/program/popocatepetl@1.5x.jpg 1x, img/program/popocatepetl@3x.jpg 2x" alt="Iztaccihuatl and Popocatepetl National Park" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -323,10 +328,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1x.webp 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1x.jpg 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@2x.jpg 2x">
-                                                            <source srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1.5x.webp 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/tehuacan-cuicatlan_biosphere_reserve@1.5x.jpg" srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@3x.jpg 2x" alt="Tehuacán-Cuicatlán Biosphere Reserve">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1x.webp 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1x.jpg 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@2x.jpg 2x">
+                                                            <source data-srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1.5x.webp 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/tehuacan-cuicatlan_biosphere_reserve@1.5x.jpg'" data-srcset="img/program/tehuacan-cuicatlan_biosphere_reserve@1.5x.jpg 1x, img/program/tehuacan-cuicatlan_biosphere_reserve@3x.jpg 2x" alt="Tehuacán-Cuicatlán Biosphere Reserve" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -341,10 +346,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/peterfied_waterfall@1x.webp 1x, img/program/peterfied_waterfall@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/peterfied_waterfall@1x.jpg 1x, img/program/peterfied_waterfall@2x.jpg 2x">
-                                                            <source srcset="img/program/peterfied_waterfall@1.5x.webp 1x, img/program/peterfied_waterfall@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/peterfied_waterfall@1.5x.jpg" srcset="img/program/peterfied_waterfall@3x.jpg 2x" alt="Hierve El Agua">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/peterfied_waterfall@1x.webp 1x, img/program/peterfied_waterfall@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/peterfied_waterfall@1x.jpg 1x, img/program/peterfied_waterfall@2x.jpg 2x">
+                                                            <source data-srcset="img/program/peterfied_waterfall@1.5x.webp 1x, img/program/peterfied_waterfall@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/peterfied_waterfall@1.5x.jpg'" data-srcset="img/program/peterfied_waterfall@1.5x.jpg 1x, img/program/peterfied_waterfall@3x.jpg 2x" alt="Hierve El Agua" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -359,10 +364,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/canyon_del_sumidero@1x.webp 1x, img/program/canyon_del_sumidero@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/canyon_del_sumidero@1x.jpg 1x, img/program/canyon_del_sumidero@2x.jpg 2x">
-                                                            <source srcset="img/program/canyon_del_sumidero@1.5x.webp 1x, img/program/canyon_del_sumidero@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/canyon_del_sumidero@1.5x.jpg" srcset="img/program/canyon_del_sumidero@3x.jpg 2x" alt="Cañón del Sumidero">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/canyon_del_sumidero@1x.webp 1x, img/program/canyon_del_sumidero@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/canyon_del_sumidero@1x.jpg 1x, img/program/canyon_del_sumidero@2x.jpg 2x">
+                                                            <source data-srcset="img/program/canyon_del_sumidero@1.5x.webp 1x, img/program/canyon_del_sumidero@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/canyon_del_sumidero@1.5x.jpg'" data-srcset="img/program/canyon_del_sumidero@1.5x.jpg 1x, img/program/canyon_del_sumidero@3x.jpg 2x" alt="Cañón del Sumidero" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -377,10 +382,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/san_migel_de_allende@1x.webp 1x, img/program/san_migel_de_allende@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/san_migel_de_allende@1x.jpg 1x, img/program/san_migel_de_allende@2x.jpg 2x">
-                                                            <source srcset="img/program/san_migel_de_allende@1.5x.webp 1x, img/program/san_migel_de_allende@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/san_migel_de_allende@1.5x.jpg" srcset="img/program/san_migel_de_allende@3x.jpg 2x" alt="Сан-Мигель-де-Альенде">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/san_migel_de_allende@1x.webp 1x, img/program/san_migel_de_allende@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/san_migel_de_allende@1x.jpg 1x, img/program/san_migel_de_allende@2x.jpg 2x">
+                                                            <source data-srcset="img/program/san_migel_de_allende@1.5x.webp 1x, img/program/san_migel_de_allende@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/san_migel_de_allende@1.5x.jpg'" data-srcset="img/program/san_migel_de_allende@1.5x.jpg 1x, img/program/san_migel_de_allende@3x.jpg 2x" alt="Сан-Мигель-де-Альенде" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -410,10 +415,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/nightpaddle@1x.webp 1x, img/program/nightpaddle@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/nightpaddle@1x.jpg 1x, img/program/nightpaddle@2x.jpg 2x">
-                                                            <source srcset="img/program/nightpaddle@1.5x.webp 1x, img/program/nightpaddle@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/nightpaddle@1.5x.jpg" srcset="img/program/nightpaddle@3x.jpg 2x" alt="Ночной Stand-Up Paddle Board">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/nightpaddle@1x.webp 1x, img/program/nightpaddle@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/nightpaddle@1x.jpg 1x, img/program/nightpaddle@2x.jpg 2x">
+                                                            <source data-srcset="img/program/nightpaddle@1.5x.webp 1x, img/program/nightpaddle@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/nightpaddle@1.5x.jpg'" data-srcset="img/program/nightpaddle@1.5x.jpg 1x, img/program/nightpaddle@3x.jpg 2x" alt="Ночной Stand-Up Paddle Board" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -428,10 +433,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/rio_tampaon@1x.webp 1x, img/program/rio_tampaon@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/rio_tampaon@1x.jpg 1x, img/program/rio_tampaon@2x.jpg 2x">
-                                                            <source srcset="img/program/rio_tampaon@1.5x.webp 1x, img/program/rio_tampaon@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/rio_tampaon@1.5x.jpg" srcset="img/program/rio_tampaon@3x.jpg 2x" alt="Rio Tampaon">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/rio_tampaon@1x.webp 1x, img/program/rio_tampaon@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/rio_tampaon@1x.jpg 1x, img/program/rio_tampaon@2x.jpg 2x">
+                                                            <source data-srcset="img/program/rio_tampaon@1.5x.webp 1x, img/program/rio_tampaon@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/rio_tampaon@1.5x.jpg'" data-srcset="img/program/rio_tampaon@1.5x.jpg 1x, img/program/rio_tampaon@3x.jpg 2x" alt="Rio Tampaon" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -446,10 +451,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/aqua_azul@1x.webp 1x, img/program/aqua_azul@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/aqua_azul@1x.jpg 1x, img/program/aqua_azul@2x.jpg 2x">
-                                                            <source srcset="img/program/aqua_azul@1.5x.webp 1x, img/program/aqua_azul@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/aqua_azul@1.5x.jpg" srcset="img/program/aqua_azul@3x.jpg 2x" alt="Agua Azul">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/aqua_azul@1x.webp 1x, img/program/aqua_azul@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/aqua_azul@1x.jpg 1x, img/program/aqua_azul@2x.jpg 2x">
+                                                            <source data-srcset="img/program/aqua_azul@1.5x.webp 1x, img/program/aqua_azul@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/aqua_azul@1.5x.jpg'" data-srcset="img/program/aqua_azul@1.5x.jpg 1x, img/program/aqua_azul@3x.jpg 2x" alt="Agua Azul" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -464,10 +469,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/sac_actun@1x.webp 1x, img/program/sac_actun@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/sac_actun@1x.jpg 1x, img/program/sac_actun@2x.jpg 2x">
-                                                            <source srcset="img/program/sac_actun@1.5x.webp 1x, img/program/sac_actun@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/sac_actun@1.5x.jpg" srcset="img/program/sac_actun@3x.jpg 2x" alt="Sac Actun">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/sac_actun@1x.webp 1x, img/program/sac_actun@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/sac_actun@1x.jpg 1x, img/program/sac_actun@2x.jpg 2x">
+                                                            <source data-srcset="img/program/sac_actun@1.5x.webp 1x, img/program/sac_actun@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/sac_actun@1.5x.jpg'" data-srcset="img/program/sac_actun@1.5x.jpg 1x, img/program/sac_actun@3x.jpg 2x" alt="Sac Actun" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -497,10 +502,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/mummy@1x.webp 1x, img/program/mummy@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/mummy@1x.jpg 1x, img/program/mummy@2x.jpg 2x">
-                                                            <source srcset="img/program/mummy@1.5x.webp 1x, img/program/mummy@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/mummy@1.5x.jpg" srcset="img/program/mummy@3x.jpg 2x" alt="Museo de las Momias de Guanajuato">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/mummy@1x.webp 1x, img/program/mummy@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/mummy@1x.jpg 1x, img/program/mummy@2x.jpg 2x">
+                                                            <source data-srcset="img/program/mummy@1.5x.webp 1x, img/program/mummy@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/mummy@1.5x.jpg'" data-srcset="img/program/mummy@1.5x.jpg 1x, img/program/mummy@3x.jpg 2x" alt="Museo de las Momias de Guanajuato" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -515,10 +520,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/teotihuacan@1x.webp 1x, img/program/teotihuacan@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/teotihuacan@1x.jpg 1x, img/program/teotihuacan@2x.jpg 2x">
-                                                            <source srcset="img/program/teotihuacan@1.5x.webp 1x, img/program/teotihuacan@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/teotihuacan@1.5x.jpg" srcset="img/program/teotihuacan@3x.jpg 2x" alt="Teotihuacan">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/teotihuacan@1x.webp 1x, img/program/teotihuacan@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/teotihuacan@1x.jpg 1x, img/program/teotihuacan@2x.jpg 2x">
+                                                            <source data-srcset="img/program/teotihuacan@1.5x.webp 1x, img/program/teotihuacan@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/teotihuacan@1.5x.jpg'" data-srcset="img/program/teotihuacan@1.5x.jpg 1x, img/program/teotihuacan@3x.jpg 2x" alt="Teotihuacan" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -533,10 +538,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/las_pozas@1x.webp 1x, img/program/las_pozas@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/las_pozas@1x.jpg 1x, img/program/las_pozas@2x.jpg 2x">
-                                                            <source srcset="img/program/las_pozas@1.5x.webp 1x, img/program/las_pozas@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/las_pozas@1.5x.jpg" srcset="img/program/las_pozas@3x.jpg 2x" alt="Las Pozas">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/las_pozas@1x.webp 1x, img/program/las_pozas@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/las_pozas@1x.jpg 1x, img/program/las_pozas@2x.jpg 2x">
+                                                            <source data-srcset="img/program/las_pozas@1.5x.webp 1x, img/program/las_pozas@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/las_pozas@1.5x.jpg'" data-srcset="img/program/las_pozas@1.5x.jpg 1x, img/program/las_pozas@3x.jpg 2x" alt="Las Pozas" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -551,10 +556,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/san_juan_chamula@1x.webp 1x, img/program/san_juan_chamula@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/san_juan_chamula@1x.jpg 1x, img/program/san_juan_chamula@2x.jpg 2x">
-                                                            <source srcset="img/program/san_juan_chamula@1.5x.webp 1x, img/program/san_juan_chamula@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/san_juan_chamula@1.5x.jpg" srcset="img/program/san_juan_chamula@3x.jpg 2x" alt="San Juan Chamula">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/san_juan_chamula@1x.webp 1x, img/program/san_juan_chamula@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/san_juan_chamula@1x.jpg 1x, img/program/san_juan_chamula@2x.jpg 2x">
+                                                            <source data-srcset="img/program/san_juan_chamula@1.5x.webp 1x, img/program/san_juan_chamula@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/san_juan_chamula@1.5x.jpg'" data-srcset="img/program/san_juan_chamula@1.5x.jpg 1x, img/program/san_juan_chamula@3x.jpg 2x" alt="San Juan Chamula" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -585,18 +590,18 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/shaman1@1x.webp 1x, img/program/shaman1@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/shaman1@1x.jpg 1x, img/program/shaman1@2x.jpg 2x">
-                                                            <source srcset="img/program/shaman1@1.5x.webp 1x, img/program/shaman1@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/shaman1@1.5x.jpg" srcset="img/program/shaman1@3x.jpg 2x" alt="Шаман">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/shaman1@1x.webp 1x, img/program/shaman1@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/shaman1@1x.jpg 1x, img/program/shaman1@2x.jpg 2x">
+                                                            <source data-srcset="img/program/shaman1@1.5x.webp 1x, img/program/shaman1@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/shaman1@1.5x.jpg'" data-srcset="img/program/shaman1@1.5x.jpg 1x, img/program/shaman1@3x.jpg 2x" alt="Шаман" v-cloak>
                                                         </picture>
                                                     </div>
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/temazcal@1x.webp 1x, img/program/temazcal@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/temazcal@1x.jpg 1x, img/program/temazcal@2x.jpg 2x">
-                                                            <source srcset="img/program/temazcal@1.5x.webp 1x, img/program/temazcal@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/temazcal@1.5x.jpg" srcset="img/program/temazcal@3x.jpg 2x" alt="Temazcal">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/temazcal@1x.webp 1x, img/program/temazcal@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/temazcal@1x.jpg 1x, img/program/temazcal@2x.jpg 2x">
+                                                            <source data-srcset="img/program/temazcal@1.5x.webp 1x, img/program/temazcal@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/temazcal@1.5x.jpg'" data-srcset="img/program/temazcal@1.5x.jpg 1x, img/program/temazcal@3x.jpg 2x" alt="Temazcal" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -612,10 +617,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures--lg">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/program/shaman2@1x.webp 1x, img/program/shaman2@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/program/shaman2@1x.jpg 1x, img/program/shaman2@2x.jpg 2x">
-                                                            <source srcset="img/program/shaman2@1.5x.webp 1x, img/program/shaman2@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/program/shaman2@1.5x.jpg" srcset="img/program/shaman2@3x.jpg 2x" alt="Шаман">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/shaman2@1x.webp 1x, img/program/shaman2@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/program/shaman2@1x.jpg 1x, img/program/shaman2@2x.jpg 2x">
+                                                            <source data-srcset="img/program/shaman2@1.5x.webp 1x, img/program/shaman2@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/program/shaman2@1.5x.jpg'" data-srcset="img/program/shaman2@1.5x.jpg 1x, img/program/shaman2@3x.jpg 2x" alt="Шаман" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -660,10 +665,10 @@
                                         <div class="tab-pane__pictures tab-pane__pictures">
                                             <div class="tab-pane__picture-wrap">
                                                 <picture>
-                                                    <source media="(max-width: 56em)" srcset="img/live/hotel@1x.webp 1x, img/live/hotel@2x.webp 2x" type="image/webp">
-                                                    <source media="(max-width: 56em)" srcset="img/live/hotel@1x.jpg 1x, img/live/hotel@2x.jpg 2x">
-                                                    <source srcset="img/live/hotel@1.5x.webp 1x, img/live/hotel@3x.webp 2x" type="image/webp">
-                                                    <img class="tab-pane__img" src="img/live/hotel@1.5x.jpg" srcset="img/live/hotel@3x.jpg 2x" alt="The Reef Playacar на Карибском море">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/hotel@1x.webp 1x, img/live/hotel@2x.webp 2x" type="image/webp">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/hotel@1x.jpg 1x, img/live/hotel@2x.jpg 2x">
+                                                    <source data-srcset="img/live/hotel@1.5x.webp 1x, img/live/hotel@3x.webp 2x" type="image/webp">
+                                                    <img class="tab-pane__img" v-lazy="'img/live/hotel@1.5x.jpg'" data-srcset="img/live/hotel@1.5x.jpg 1x, img/live/hotel@3x.jpg 2x" alt="The Reef Playacar на Карибском море" v-cloak>
                                                 </picture>
                                             </div>
                                         </div>
@@ -694,10 +699,10 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/live/food2@1x.webp 1x, img/live/food2@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/live/food2@1x.jpg 1x, img/live/food2@2x.jpg 2x">
-                                                            <source srcset="img/live/food2@1.5x.webp 1x, img/live/food2@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/live/food2@1.5x.jpg" srcset="img/live/food2@3x.jpg 2x" alt="Гуакамоле">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food2@1x.webp 1x, img/live/food2@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food2@1x.jpg 1x, img/live/food2@2x.jpg 2x">
+                                                            <source data-srcset="img/live/food2@1.5x.webp 1x, img/live/food2@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/live/food2@1.5x.jpg'" data-srcset="img/live/food2@1.5x.jpg 1x, img/live/food2@3x.jpg 2x" alt="Гуакамоле" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -714,18 +719,18 @@
                                                 <div class="tab-pane__pictures tab-pane__pictures">
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/live/food1@1x.webp 1x, img/live/food1@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/live/food1@1x.jpg 1x, img/live/food1@2x.jpg 2x">
-                                                            <source srcset="img/live/food1@1.5x.webp 1x, img/live/food1@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/live/food1@1.5x.jpg" srcset="img/live/food1@3x.jpg 2x" alt="Жаркое из свинины">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food1@1x.webp 1x, img/live/food1@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food1@1x.jpg 1x, img/live/food1@2x.jpg 2x">
+                                                            <source data-srcset="img/live/food1@1.5x.webp 1x, img/live/food1@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/live/food1@1.5x.jpg'" data-srcset="img/live/food1@1.5x.jpg 1x, img/live/food1@3x.jpg 2x" alt="Жаркое из свинины" v-cloak>
                                                         </picture>
                                                     </div>
                                                     <div class="tab-pane__picture-wrap">
                                                         <picture>
-                                                            <source media="(max-width: 56em)" srcset="img/live/food3@1x.webp 1x, img/live/food3@2x.webp 2x" type="image/webp">
-                                                            <source media="(max-width: 56em)" srcset="img/live/food3@1x.jpg 1x, img/live/food3@2x.jpg 2x">
-                                                            <source srcset="img/live/food3@1.5x.webp 1x, img/live/food3@3x.webp 2x" type="image/webp">
-                                                            <img class="tab-pane__img" src="img/live/food3@1.5x.jpg" srcset="img/live/food3@3x.jpg 2x" alt="Арачеро">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food3@1x.webp 1x, img/live/food3@2x.webp 2x" type="image/webp">
+                                                            <source media="(max-width: 56em)" data-srcset="img/live/food3@1x.jpg 1x, img/live/food3@2x.jpg 2x">
+                                                            <source data-srcset="img/live/food3@1.5x.webp 1x, img/live/food3@3x.webp 2x" type="image/webp">
+                                                            <img class="tab-pane__img" v-lazy="'img/live/food3@1.5x.jpg'" data-srcset="img/live/food3@1.5x.jpg 1x, img/live/food3@3x.jpg 2x" alt="Арачеро" v-cloak>
                                                         </picture>
                                                     </div>
                                                 </div>
@@ -760,18 +765,18 @@
                                         <div class="tab-pane__pictures tab-pane__pictures">
                                             <div class="tab-pane__picture-wrap">
                                                 <picture>
-                                                    <source media="(max-width: 56em)" srcset="img/live/orchata@1x.webp 1x, img/live/orchata@2x.webp 2x" type="image/webp">
-                                                    <source media="(max-width: 56em)" srcset="img/live/orchata@1x.jpg 1x, img/live/orchata@2x.jpg 2x">
-                                                    <source srcset="img/live/orchata@1.5x.webp 1x, img/live/orchata@3x.webp 2x" type="image/webp">
-                                                    <img class="tab-pane__img" src="img/live/orchata@1.5x.jpg" srcset="img/live/orchata@3x.jpg 2x" alt="Орчата">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/orchata@1x.webp 1x, img/live/orchata@2x.webp 2x" type="image/webp">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/orchata@1x.jpg 1x, img/live/orchata@2x.jpg 2x">
+                                                    <source data-srcset="img/live/orchata@1.5x.webp 1x, img/live/orchata@3x.webp 2x" type="image/webp">
+                                                    <img class="tab-pane__img" v-lazy="'img/live/orchata@1.5x.jpg'" data-srcset="img/live/orchata@1.5x.jpg 1x, img/live/orchata@3x.jpg 2x" alt="Орчата" v-cloak>
                                                 </picture>
                                             </div>
                                             <div class="tab-pane__picture-wrap">
                                                 <picture>
-                                                    <source media="(max-width: 56em)" srcset="img/live/tequila@1x.webp 1x, img/live/tequila@2x.webp 2x" type="image/webp">
-                                                    <source media="(max-width: 56em)" srcset="img/live/tequila@1x.jpg 1x, img/live/tequila@2x.jpg 2x">
-                                                    <source srcset="img/live/tequila@1.5x.webp 1x, img/live/tequila@3x.webp 2x" type="image/webp">
-                                                    <img class="tab-pane__img" src="img/live/tequila@1.5x.jpg" srcset="img/live/tequila@3x.jpg 2x" alt="Текила">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/tequila@1x.webp 1x, img/live/tequila@2x.webp 2x" type="image/webp">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/tequila@1x.jpg 1x, img/live/tequila@2x.jpg 2x">
+                                                    <source data-srcset="img/live/tequila@1.5x.webp 1x, img/live/tequila@3x.webp 2x" type="image/webp">
+                                                    <img class="tab-pane__img" v-lazy="'img/live/tequila@1.5x.jpg'" data-srcset="img/live/tequila@1.5x.jpg 1x, img/live/tequila@3x.jpg 2x" alt="Текила" v-cloak>
                                                 </picture>
                                             </div>
                                         </div>
@@ -796,10 +801,10 @@
                                         <div class="tab-pane__pictures tab-pane__pictures">
                                             <div class="tab-pane__picture-wrap">
                                                 <picture>
-                                                    <source media="(max-width: 56em)" srcset="img/live/stones_teotihuacan@1x.webp 1x, img/live/stones_teotihuacan@2x.webp 2x" type="image/webp">
-                                                    <source media="(max-width: 56em)" srcset="img/live/stones_teotihuacan@1x.jpg 1x, img/live/stones_teotihuacan@2x.jpg 2x">
-                                                    <source srcset="img/live/stones_teotihuacan@1.5x.webp 1x, img/live/stones_teotihuacan@3x.webp 2x" type="image/webp">
-                                                    <img class="tab-pane__img" src="img/live/stones_teotihuacan@1.5x.jpg" srcset="img/live/stones_teotihuacan@3x.jpg 2x" alt="Камни">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/stones_teotihuacan@1x.webp 1x, img/live/stones_teotihuacan@2x.webp 2x" type="image/webp">
+                                                    <source media="(max-width: 56em)" data-srcset="img/live/stones_teotihuacan@1x.jpg 1x, img/live/stones_teotihuacan@2x.jpg 2x">
+                                                    <source data-srcset="img/live/stones_teotihuacan@1.5x.webp 1x, img/live/stones_teotihuacan@3x.webp 2x" type="image/webp">
+                                                    <img class="tab-pane__img" v-lazy="'img/live/stones_teotihuacan@1.5x.jpg'" data-srcset="img/live/stones_teotihuacan@1.5x.jpg 1x, img/live/stones_teotihuacan@3x.jpg 2x" alt="Камни" v-cloak>
                                                 </picture>
                                             </div>
                                         </div>
@@ -833,10 +838,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/team/alina_strelec_de_castro@1x.webp 1x, img/team/alina_strelec_de_castro@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/team/alina_strelec_de_castro@1x.jpg 1x, img/team/alina_strelec_de_castro@2x.jpg 2x">
-                                        <source srcset="img/team/alina_strelec_de_castro@1.5x.webp 1x, img/team/alina_strelec_de_castro@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/team/alina_strelec_de_castro@1.5x.jpg" srcset="img/team/alina_strelec_de_castro@3x.jpg 2x" alt="Алина Стрелец де Кастро">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/alina_strelec_de_castro@1x.webp 1x, img/team/alina_strelec_de_castro@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/alina_strelec_de_castro@1x.jpg 1x, img/team/alina_strelec_de_castro@2x.jpg 2x">
+                                        <source data-srcset="img/team/alina_strelec_de_castro@1.5x.webp 1x, img/team/alina_strelec_de_castro@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/team/alina_strelec_de_castro@1.5x.jpg'" data-srcset="img/team/alina_strelec_de_castro@1.5x.jpg 1x, img/team/alina_strelec_de_castro@3x.jpg 2x" alt="Алина Стрелец де Кастро" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -855,10 +860,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/team/nataly_nechaeva@1x.webp 1x, img/team/nataly_nechaeva@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/team/nataly_nechaeva@1x.jpg 1x, img/team/nataly_nechaeva@2x.jpg 2x">
-                                        <source srcset="img/team/nataly_nechaeva@1.5x.webp 1x, img/team/nataly_nechaeva@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/team/nataly_nechaeva@1.5x.jpg" srcset="img/team/nataly_nechaeva@3x.jpg 2x" alt="Наталья Нечаева">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/nataly_nechaeva@1x.webp 1x, img/team/nataly_nechaeva@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/nataly_nechaeva@1x.jpg 1x, img/team/nataly_nechaeva@2x.jpg 2x">
+                                        <source data-srcset="img/team/nataly_nechaeva@1.5x.webp 1x, img/team/nataly_nechaeva@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/team/nataly_nechaeva@1.5x.jpg'" data-srcset="img/team/nataly_nechaeva@1.5x.jpg 1x, img/team/nataly_nechaeva@3x.jpg 2x" alt="Наталья Нечаева" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -878,10 +883,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/team/milena_leonenko@1x.webp 1x, img/team/milena_leonenko@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/team/milena_leonenko@1x.jpg 1x, img/team/milena_leonenko@2x.jpg 2x">
-                                        <source srcset="img/team/milena_leonenko@1.5x.webp 1x, img/team/milena_leonenko@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/team/milena_leonenko@1.5x.jpg" srcset="img/team/milena_leonenko@3x.jpg 2x" alt="Милена Леоненко">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/milena_leonenko@1x.webp 1x, img/team/milena_leonenko@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/team/milena_leonenko@1x.jpg 1x, img/team/milena_leonenko@2x.jpg 2x">
+                                        <source data-srcset="img/team/milena_leonenko@1.5x.webp 1x, img/team/milena_leonenko@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/team/milena_leonenko@1.5x.jpg'" data-srcset="img/team/milena_leonenko@1.5x.jpg 1x, img/team/milena_leonenko@3x.jpg 2x" alt="Милена Леоненко" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -1006,10 +1011,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/feedback/bondarenko_nataly@1x.webp 1x, img/feedback/bondarenko_nataly@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/feedback/bondarenko_nataly@1x.jpg 1x, img/feedback/bondarenko_nataly@2x.jpg 2x">
-                                        <source srcset="img/feedback/bondarenko_nataly@1.5x.webp 1x, img/feedback/bondarenko_nataly@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/feedback/bondarenko_nataly@1.5x.jpg" srcset="img/feedback/bondarenko_nataly@3x.jpg 2x" alt="Bondarenko Nataly">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/bondarenko_nataly@1x.webp 1x, img/feedback/bondarenko_nataly@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/bondarenko_nataly@1x.jpg 1x, img/feedback/bondarenko_nataly@2x.jpg 2x">
+                                        <source data-srcset="img/feedback/bondarenko_nataly@1.5x.webp 1x, img/feedback/bondarenko_nataly@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/feedback/bondarenko_nataly@1.5x.jpg'" data-srcset="img/feedback/bondarenko_nataly@1.5x.jpg 1x, img/feedback/bondarenko_nataly@3x.jpg 2x" alt="Bondarenko Nataly" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -1025,10 +1030,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/feedback/ushakov_artem@1x.webp 1x, img/feedback/ushakov_artem@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/feedback/ushakov_artem@1x.jpg 1x, img/feedback/ushakov_artem@2x.jpg 2x">
-                                        <source srcset="img/feedback/ushakov_artem@1.5x.webp 1x, img/feedback/ushakov_artem@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/feedback/ushakov_artem@1.5x.jpg" srcset="img/feedback/ushakov_artem@3x.jpg 2x" alt="Ushakov Artem">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/ushakov_artem@1x.webp 1x, img/feedback/ushakov_artem@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/ushakov_artem@1x.jpg 1x, img/feedback/ushakov_artem@2x.jpg 2x">
+                                        <source data-srcset="img/feedback/ushakov_artem@1.5x.webp 1x, img/feedback/ushakov_artem@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/feedback/ushakov_artem@1.5x.jpg'" data-srcset="img/feedback/ushakov_artem@1.5x.jpg 1x, img/feedback/ushakov_artem@3x.jpg 2x" alt="Ushakov Artem" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -1046,10 +1051,10 @@
                             <article class="article">
                                 <div class="article__img-wrap">
                                     <picture>
-                                        <source media="(max-width: 56em)" srcset="img/feedback/kovaleva_julia@1x.webp 1x, img/feedback/kovaleva_julia@2x.webp 2x" type="image/webp">
-                                        <source media="(max-width: 56em)" srcset="img/feedback/kovaleva_julia@1x.jpg 1x, img/feedback/kovaleva_julia@2x.jpg 2x">
-                                        <source srcset="img/feedback/kovaleva_julia@1.5x.webp 1x, img/feedback/kovaleva_julia@3x.webp 2x" type="image/webp">
-                                        <img class="article__img" src="img/feedback/kovaleva_julia@1.5x.jpg" srcset="img/feedback/kovaleva_julia@3x.jpg 2x" alt="Kovaleva Julia">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/kovaleva_julia@1x.webp 1x, img/feedback/kovaleva_julia@2x.webp 2x" type="image/webp">
+                                        <source media="(max-width: 56em)" data-srcset="img/feedback/kovaleva_julia@1x.jpg 1x, img/feedback/kovaleva_julia@2x.jpg 2x">
+                                        <source data-srcset="img/feedback/kovaleva_julia@1.5x.webp 1x, img/feedback/kovaleva_julia@3x.webp 2x" type="image/webp">
+                                        <img class="article__img" v-lazy="'img/feedback/kovaleva_julia@1.5x.jpg'" data-srcset="img/feedback/kovaleva_julia@1.5x.jpg 1x, img/feedback/kovaleva_julia@3x.jpg 2x" alt="Kovaleva Julia" v-cloak>
                                     </picture>
                                 </div>
                                 <div class="article__header">
@@ -1069,10 +1074,10 @@
             <section class="section faq">
                 <div class="section__cover">
                     <picture>
-                        <source media="(max-width: 56em)" srcset="img/illustrations/illustration3@1x.webp 1x, img/illustrations/illustration3@2x.webp 2x" type="image/webp">
-                        <source media="(max-width: 56em)" srcset="img/illustrations/illustration3@1x.png 1x, img/illustrations/illustration3@2x.png 2x">
-                        <source srcset="img/illustrations/illustration3@1.5x.webp 1x, img/illustrations/illustration3@3x.webp 2x" type="image/webp">
-                        <img class="section__cover-img" src="img/illustrations/illustration3@1.5x.png" srcset="img/illustrations/illustration3@3x.png 2x" alt="Иллюстрация">
+                        <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration3@1x.webp 1x, img/illustrations/illustration3@2x.webp 2x" type="image/webp">
+                        <source media="(max-width: 56em)" data-srcset="img/illustrations/illustration3@1x.png 1x, img/illustrations/illustration3@2x.png 2x">
+                        <source data-srcset="img/illustrations/illustration3@1.5x.webp 1x, img/illustrations/illustration3@3x.webp 2x" type="image/webp">
+                        <img class="section__cover-img" v-lazy="'img/illustrations/illustration3@1.5x.png'" data-srcset="img/illustrations/illustration3@1.5x.png 1x, img/illustrations/illustration3@3x.png 2x" alt="Иллюстрация" v-cloak>
                     </picture>
                 </div>
                 <div class="container" id="faq">
@@ -1341,9 +1346,17 @@
                     </button>
                     <div class="modal__content">
                         <div class="widget widget--video">
-                            <video src="files/video.mp4" ref="video" @pause="videoStatus = 'paused'" @play="videoStatus = 'playing'"></video>
+                            <video v-if="videoStatus" :src="videoSrc" ref="video" @pause="videoStatus = 'paused'" controls @play="videoStatus = 'playing'"></video>
+                            <div v-else class="widget__poster">
+                                <picture>
+                                    <source media="(max-width: 56em)" srcset="img/cover/poster@1x.webp 1x, img/cover/poster@2x.webp 2x" type="image/webp">
+                                    <source media="(max-width: 56em)" srcset="img/cover/poster@1x.jpg 1x, img/cover/poster@2x.jpg 2x">
+                                    <source srcset="img/cover/poster@1.5x.webp 1x, img/cover/poster@3x.webp 2x" type="image/webp">
+                                    <img class="widget__poster-img" src="img/cover/poster@1.5x.jpg" srcset="img/cover/poster@3x.jpg 2x" alt="Видео-приглашение от основателей компании Energy TRAVEL">
+                                </picture>
+                            </div>
                             <transition name="fade">
-                                <button v-show="videoStatus === 'paused'" class="widget__button" @click="playVideo()">
+                                <button v-show="videoStatus !== 'playing'" class="widget__button" @click="playVideo()">
                                     <svg class="icon toggle__icon">
                                         <use xlink:href="img/icons.svg#play"></use>
                                     </svg>
@@ -1544,8 +1557,8 @@
             });
         }
     </script>
-    <script defer src="js/vendor.js"></script>
-    <script defer src="js/bundle.js"></script>
+    <script defer src="js/vendor.js?v=d7bce1"></script>
+    <script defer src="js/bundle.js?v=d7bce1"></script>
     <script defer type="text/javascript" src="https://vk.com/js/api/openapi.js?161" onload="vkInit()"></script>
     <!-- Yandex.Metrika counter -->
     <script async type="text/javascript" >

@@ -2,6 +2,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   mb_internal_encoding("UTF-8");
 
+  $form = strip_tags(trim($_POST["form"]));
+  $form = str_replace(array("\r","\n"),array(" "," "),$form);
   $name = strip_tags(trim($_POST["name"]));
   $name = str_replace(array("\r","\n"),array(" "," "),$name);
   $phone = trim($_POST["phone"]);
@@ -10,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $contact = str_replace(array("\r","\n"),array(" "," "),$contact);
   $city = strip_tags(trim($_POST['city']));
 
-  $has_tour_info = isset($_POST['date']);
+  $has_tour_info = isset($_POST['date']) && $_POST['date'] !== null;
 
   if ($has_tour_info) {
     $date = strip_tags(trim($_POST['date']));
@@ -51,6 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $emailsubject = "Новая заявка: от " . $name;
 
   $email_content = "<h2>Новая заявка с сайта «Energy Travel»</h2>";
+  $email_content .= "<p>Форма: «" .$form . "»</p>";
+  $email_content .= "<hr/>\r\n";
+  $email_content .= "<h3>Информация о пользователе:</h3>";
   $email_content .= "<p>Имя: $name</p>\r\n";
   $email_content .= "<p>Телефон/WhatsApp: $phone</p>\r\n";
   $email_content .= "<p>E-mail или ID в соц. сетях: $contact</p>\r\n";
@@ -75,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (mail($recipient, $emailsubject, $email_content, $email_headers)) {
       http_response_code(200);
-      echo 'Сообщение успешно отправлено';
+      echo 'Сообщение успешно отправлено.';
   } else {
       http_response_code(500);
-      echo "Произошла ошибка. Сообщение не было отправлено.\n Email Content: " . $email_content . "\n Email Subject: " . $emailsubject . "\n Recipient: " . $recipient;
+      echo "Произошла ошибка. Сообщение не было отправлено.";
   }
 
 } else {

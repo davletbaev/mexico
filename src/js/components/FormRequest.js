@@ -29,28 +29,37 @@ export default Vue.component('form-request', {
         case 'pricing': return 'Заполни форму<br> для бронирования тура'
         default: return 'Получи 5 советов по восстановлению жизненных сил, находясь в путешествии'
       }
+    },
+    tour() {
+      return this.referrer === 'pricing' ? (this.selectedTour || null) : null
     }
   },
   props: ['selectedTour', 'referrer'],
   methods: {
     submitForm() {
       const isValid = this.validate('all');
-      const selectedTour = this.selectedTour || {}
 
       if (isValid) {
-        const data = {
+        let data = {
+          form: this.formTitle.replace('<br>', ''),
           name: this.name,
           phone: this.phone,
           contact: this.contact,
           city: this.city,
-          date: selectedTour.date || null,
-          seatsReserved: selectedTour.seatsReserved || null,
-          seatsAvailable: selectedTour.seatsAvailable || null,
-          seatsTotal: selectedTour.seatsTotal || null,
-          duration: selectedTour.duration || null,
-          priceCurrent: selectedTour.priceCurrent || null,
-          pricePrev: selectedTour.pricePrev || null
         }
+
+        if (this.tour !== null) {
+          data = Object.assign(data, {
+            date: this.tour.date || null,
+            seatsReserved: this.tour.seatsReserved || null,
+            seatsAvailable: this.tour.seatsAvailable || null,
+            seatsTotal: this.tour.seatsTotal || null,
+            duration: this.tour.duration || null,
+            priceCurrent: this.tour.priceCurrent || null,
+            pricePrev: this.tour.pricePrev || null
+          })
+        }
+
         const url = this.$refs.form.getAttribute('action')
 
         const formData = Object.keys(data).map((key) => {
@@ -70,6 +79,8 @@ export default Vue.component('form-request', {
           } else {
             this.error = true;
           }
+
+          this.$refs.form.reset()
         })
       }
     },

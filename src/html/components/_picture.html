@@ -16,7 +16,7 @@
     <img
       {% if classname %}class="{{ classname }}"{% endif %}
       v-lazy="'{{ path }}@1.5x.{{ ext }}'"
-      data-srcset="{{ path }}@3x.{{ ext }} 2x"
+      data-srcset="{{ path }}@1.5x.{{ ext }} 1x, {{ path }}@3x.{{ ext }} 2x"
       alt="{{ alt }}"
       v-cloak
     >

@@ -10,7 +10,34 @@ import { debounce } from './utils'
 Vue.use(VueLazyload, {
   preLoad: 1.5,
   loading: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSI+CiAgPHBhdGggZD0iTTAgNCBMMCAyOCBMMzIgMjggTDMyIDQgeiBNNCAyNCBMMTAgMTAgTDE1IDE4IEwxOCAxNCBMMjQgMjR6IE0yNSA3IEE0IDQgMCAwIDEgMjUgMTUgQTQgNCAwIDAgMSAyNSA3Ij48L3BhdGg+Cjwvc3ZnPg==',
-  attempt: 1
+  attempt: 1,
+  filter: {
+    responsive (listener) {
+      const isRetina = window.devicePixelRatio > 1;
+      const screenWidth = window.innerWidth;
+      
+      if (screenWidth < 768 && !isRetina) {
+        listener.src = listener.src.replace('3x', '1x')
+      }
+
+      if (screenWidth < 768 && isRetina) {
+        listener.src = listener.src.replace('3x', '2x')
+      }
+
+      if (screenWidth >= 768 && !isRetina) {
+        listener.src = listener.src.replace('3x', '1.5x')
+      }
+    },
+    webp (listener, options) {
+        if (!options.supportWebp) return
+
+        const isHOST = new RegExp('img')
+        if (isHOST.test(listener.src)) {
+          listener.src = listener.src.replace('png', 'webp')
+          listener.src = listener.src.replace('jpg', 'webp')
+        }
+    }
+  }
 })
 
 Vue.use(VueAwesomeSwiper);
