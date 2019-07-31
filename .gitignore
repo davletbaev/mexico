@@ -6,4 +6,5 @@ dist
 *.php
 .htaccess.*
 cms*
+*.mp4
 *.log
