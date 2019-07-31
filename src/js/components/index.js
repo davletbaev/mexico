@@ -1,7 +1,0 @@
-export { default as Accordion } from './Accordion'
-export { default as Article } from './Article'
-export { default as Header } from './Header'
-export { default as FormRequest } from './FormRequest'
-export { default as FormPricing } from './FormPricing'
-export { default as Modal } from './Modal'
-export { default as Tabs } from './Tabs'
