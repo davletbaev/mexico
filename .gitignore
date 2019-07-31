@@ -3,4 +3,7 @@ dist
 .publish
 .DS_Store
 .vscode
+*.php
+.htaccess.*
+cms*
 *.log
